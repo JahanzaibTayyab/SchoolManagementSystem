@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="156.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="login.Controller.UserBackupController">
+   <children>
+      <TextField fx:id="path" layoutX="41.0" layoutY="57.0" prefHeight="37.0" prefWidth="515.0" promptText="path" />
+      <Button fx:id="browser" layoutX="203.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#BrowserButtonHandling" text="Browser" />
+      <Button fx:id="backup" layoutX="339.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#BackupButtonHandling" text="Backup" />
+   </children>
+</AnchorPane>

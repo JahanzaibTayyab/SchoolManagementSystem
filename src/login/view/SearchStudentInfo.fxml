@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="clear" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1360.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.Controller.SearchStudentInfoController">
+   <children>
+      <Pane prefHeight="92.0" prefWidth="1360.0" style="-fx-background-color: #4c26be;" stylesheets="@Style.css">
+         <children>
+            <Label alignment="TOP_CENTER" layoutX="1.0" layoutY="14.0" prefHeight="38.0" prefWidth="1360.0" text="Student Information" textFill="#fffefe">
+               <font>
+                  <Font name="Elephant" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutY="92.0" prefHeight="508.0" prefWidth="1360.0" style="-fx-background-color: #ffffff;" styleClass="fill-dark" stylesheets="@Style.css">
+         <children>
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="5.0" prefHeight="17.0" prefWidth="439.0" text="Personal Information">
+               <font>
+                  <Font name="Sitka Display" size="17.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView glyphName="USER" layoutX="131.0" layoutY="18.0" />
+            <Label layoutX="21.0" layoutY="43.0" text="First Name">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField id="firstname" fx:id="firstname" layoutX="101.0" layoutY="39.0" prefHeight="25.0" prefWidth="180.0" promptText="First Name" />
+            <Label layoutX="21.0" layoutY="91.0" text="Father Name">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField id="fathername" fx:id="fathername" layoutX="101.0" layoutY="87.0" prefHeight="25.0" prefWidth="180.0" promptText="father name" />
+            <Label layoutX="21.0" layoutY="140.0" text="B-Form">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField id="bform" fx:id="bform" layoutX="101.0" layoutY="136.0" prefHeight="25.0" prefWidth="351.0" promptText="b-form" />
+            <Label layoutX="21.0" layoutY="187.0" text="F-CNIC">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField id="fathercnic" fx:id="fathercnic" layoutX="101.0" layoutY="183.0" prefHeight="25.0" prefWidth="351.0" promptText="father cnic" />
+            <Label layoutX="21.0" layoutY="233.0" text="Occupation">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField id="occupation" fx:id="occupation" layoutX="101.0" layoutY="229.0" prefHeight="25.0" prefWidth="152.0" promptText="occupation" />
+            <Label layoutX="260.0" layoutY="233.0" text="Email">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField id="email" fx:id="email" layoutX="305.0" layoutY="229.0" prefHeight="25.0" prefWidth="144.0" promptText="email" />
+            <Label layoutX="21.0" layoutY="275.0" text="Cell No.">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField id="cellno" fx:id="cellno" layoutX="101.0" layoutY="271.0" prefHeight="25.0" prefWidth="152.0" promptText="cell no" />
+            <Label layoutX="258.0" layoutY="275.0" text="Tel.">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField id="telephone" fx:id="telephone" layoutX="308.0" layoutY="271.0" prefHeight="25.0" prefWidth="144.0" promptText="Telephone" />
+            <Label layoutX="20.0" layoutY="319.0" prefHeight="16.0" prefWidth="54.0" text="Gender">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="358.0" text="DOB">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <JFXDatePicker id="bod" fx:id="dob" layoutX="92.0" layoutY="346.0" promptText="Date of Birth" />
+            <Label layoutX="266.0" layoutY="351.0" text="Blood Group">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="401.0" text="Address">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField id="address" fx:id="address" layoutX="95.0" layoutY="397.0" prefHeight="25.0" prefWidth="351.0" promptText="address" />
+            <Label layoutX="16.0" layoutY="441.0" text="City">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField id="city" fx:id="city" layoutX="96.0" layoutY="437.0" prefHeight="25.0" prefWidth="152.0" promptText="city" />
+            <Label layoutX="255.0" layoutY="441.0" text="Provience">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField id="provience" fx:id="province" layoutX="323.0" layoutY="437.0" prefHeight="25.0" prefWidth="121.0" promptText="province" />
+            <JFXTextField id="gender" fx:id="gender" layoutX="98.0" layoutY="307.0" prefHeight="25.0" prefWidth="351.0" promptText="Gender" />
+            <JFXTextField id="blood group" fx:id="bloodgroup" layoutX="346.0" layoutY="347.0" prefHeight="25.0" prefWidth="103.0" promptText="blood group" />
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="517.0" layoutY="4.0" prefHeight="17.0" prefWidth="439.0" text="Fee Information">
+               <font>
+                  <Font name="Sitka Display" size="17.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView glyphName="BANK" layoutX="661.0" layoutY="18.0" />
+            <TableView id="feetable" fx:id="feeinformation" layoutX="480.0" layoutY="24.0" prefHeight="229.0" prefWidth="552.0" />
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="517.0" layoutY="253.0" prefHeight="17.0" prefWidth="439.0" text="Result Information">
+               <font>
+                  <Font name="Sitka Display" size="17.0" />
+               </font>
+            </Label>
+            <FontAwesomeIconView glyphName="GRADUATION_CAP" layoutX="649.0" layoutY="267.0" />
+            <TableView id="resulttable" fx:id="resultinformation" layoutX="480.0" layoutY="284.0" prefHeight="200.0" prefWidth="552.0" />
+            <BarChart fx:id="attendence" layoutX="1032.0" layoutY="68.0" prefHeight="442.0" prefWidth="323.0" title="Attendence">
+              <xAxis>
+                <CategoryAxis label="Month" side="BOTTOM" fx:id="x" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="y" label="Days" side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <Label layoutX="1059.0" layoutY="31.0" prefHeight="25.0" prefWidth="54.0" text="Class">
+               <font>
+                  <Font name="Times New Roman" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField layoutX="1113.0" layoutY="27.0" promptText="Class" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

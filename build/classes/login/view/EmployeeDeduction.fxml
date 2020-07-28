@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.Controller.EmployeeDeductionController">
+   <children>
+      <Pane prefHeight="106.0" prefWidth="644.0" style="-fx-background-color: #2d75e8;">
+         <children>
+            <Label alignment="TOP_CENTER" layoutY="28.0" prefHeight="32.0" prefWidth="636.0" text="Employee Deducation" textFill="#f8f5f5">
+               <font>
+                  <Font name="Times New Roman" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="274.0" layoutY="63.0" text="Assas High School" />
+            <FontAwesomeIconView glyphName="EYE" layoutX="596.0" layoutY="93.0" onMouseClicked="#ViewButtonHandling" size="25" />
+         </children>
+      </Pane>
+      <Pane layoutX="1.0" layoutY="107.0" prefHeight="411.0" prefWidth="643.0">
+         <children>
+            <TabPane layoutX="-2.0" prefHeight="410.0" prefWidth="644.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Employee Deducation">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="333.0" prefWidth="681.0">
+                           <children>
+                              <Pane layoutX="2.0" layoutY="3.0" prefHeight="372.0" prefWidth="645.0">
+                                 <children>
+                                    <JFXTextField fx:id="staffid" labelFloat="true" layoutX="14.0" layoutY="23.0" onAction="#IDAction" promptText="ID" />
+                                    <JFXTextField fx:id="staffname" labelFloat="true" layoutX="14.0" layoutY="71.0" promptText="First Name" />
+                                    <JFXTextField fx:id="stafflastname" labelFloat="true" layoutX="14.0" layoutY="120.0" promptText="Last Name" />
+                                    <JFXTextField fx:id="scnic" labelFloat="true" layoutX="14.0" layoutY="165.0" promptText="CNIC" />
+                                    <JFXTextField fx:id="sphonenumber" labelFloat="true" layoutX="168.0" layoutY="165.0" promptText="Phone Number" />
+                                    <JFXTextField fx:id="saddress" labelFloat="true" layoutX="14.0" layoutY="207.0" prefHeight="25.0" prefWidth="293.0" promptText="Address" />
+                                    <JFXTextField fx:id="scity" labelFloat="true" layoutX="14.0" layoutY="257.0" promptText="City" />
+                                    <JFXTextField fx:id="sprovince" labelFloat="true" layoutX="168.0" layoutY="257.0" promptText="Province" />
+                                    <JFXTextField fx:id="spercentagebox" labelFloat="true" layoutX="329.0" layoutY="84.0" promptText="Percentage(%)" />
+                                    <JFXTextField fx:id="Totalsalary" labelFloat="true" layoutX="325.0" layoutY="133.0" prefHeight="25.0" prefWidth="134.0" promptText="Total Amount" />
+                                    <JFXTextField fx:id="samountbox" labelFloat="true" layoutX="488.0" layoutY="84.0" promptText="Amount" />
+                                    <Button fx:id="ssave" layoutX="203.0" layoutY="333.0" mnemonicParsing="false" onMouseClicked="#StaffSaveButtonHandling" prefHeight="25.0" prefWidth="66.0" stylesheets="@Style.css" text="Save" />
+                                    <Button fx:id="sclear" layoutX="448.0" layoutY="332.0" mnemonicParsing="false" onMouseClicked="#StaffClearButtonHandling" prefHeight="25.0" prefWidth="77.0" stylesheets="@Style.css" text="Clear" />
+                                    <FontAwesomeIconView glyphName="SAVE" layoutX="211.0" layoutY="349.0" />
+                                    <FontAwesomeIconView glyphName="UNDO" layoutX="448.0" layoutY="348.0" />
+                                    <JFXTextField fx:id="salaryafterdeduction" labelFloat="true" layoutX="484.0" layoutY="133.0" prefHeight="25.0" prefWidth="134.0" promptText="Salary After Deduction" />
+                                    <Button fx:id="scalculate" layoutX="349.0" layoutY="332.0" mnemonicParsing="false" onMouseClicked="#StaffCalculateButton" prefHeight="25.0" prefWidth="86.0" stylesheets="@Style.css" text="Calculate" />
+                                    <FontAwesomeIconView glyphName="CALCULATOR" layoutX="352.0" layoutY="349.0" text="" />
+                                    <JFXComboBox fx:id="smonth" labelFloat="true" layoutX="441.0" layoutY="220.0" prefHeight="25.0" prefWidth="102.0" promptText="month" />
+                                    <JFXComboBox fx:id="syear" labelFloat="true" layoutX="551.0" layoutY="220.0" prefHeight="25.0" prefWidth="69.0" promptText="year" />
+                                    <Label layoutX="384.0" layoutY="224.0" text="Date" />
+                                    <RadioButton fx:id="spercentage" layoutX="336.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#PercentageButton" text="Percentage (%)">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="radiocheck" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="samount" layoutX="471.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#AmountButton" text="Amount" toggleGroup="$radiocheck" />
+                                    <JFXTextField fx:id="sreason" labelFloat="true" layoutX="329.0" layoutY="186.0" prefHeight="25.0" prefWidth="301.0" promptText="Reason" />
+                                    <Button fx:id="ssave1" layoutX="274.0" layoutY="333.0" mnemonicParsing="false" onMouseClicked="#StaffUpdateButtonHandling" prefHeight="25.0" prefWidth="66.0" stylesheets="@Style.css" text="Update" />
+                                    <FontAwesomeIconView glyphName="ROTATE_RIGHT" layoutX="274.0" layoutY="349.0" />
+                                    <Pane fx:id="pane" layoutX="171.0" layoutY="19.0" prefHeight="130.0" prefWidth="130.0">
+                                       <children>
+                                          <ImageView fx:id="image" fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

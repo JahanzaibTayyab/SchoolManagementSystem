@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="FeeVoucherDetails" prefHeight="650.0" prefWidth="1360.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.Controller.DashboardController">
+   <children>
+      <Pane prefHeight="125.0" prefWidth="1360.0" style="-fx-background-color: #2d75e8;" AnchorPane.bottomAnchor="525.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="144.0" layoutY="40.0" text="DashBoard" textAlignment="CENTER" textFill="#ffeeee">
+               <font>
+                  <Font name="Elephant" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="144.0" layoutY="87.0" text="Assas High School" />
+         </children>
+      </Pane>
+      <HBox layoutX="43.0" layoutY="173.0" spacing="20.0">
+         <children>
+            <Pane prefHeight="418.0" prefWidth="302.0" style="-fx-background-color: #ab966a;">
+               <children>
+                  <JFXTextField fx:id="totalstudent" alignment="TOP_CENTER" labelFloat="true" layoutX="16.0" layoutY="14.0" prefHeight="25.0" prefWidth="87.0" promptText="Total Student" />
+                  <JFXTextField fx:id="malestudent" alignment="TOP_CENTER" labelFloat="true" layoutX="23.0" layoutY="56.0" prefHeight="25.0" prefWidth="50.0" promptText="Male" />
+                  <JFXTextField fx:id="femalestudent" alignment="TOP_CENTER" labelFloat="true" layoutX="112.0" layoutY="56.0" prefHeight="25.0" prefWidth="50.0" promptText="Female" />
+                  <JFXTextField fx:id="passoutstudent" alignment="TOP_CENTER" labelFloat="true" layoutX="206.0" layoutY="56.0" prefHeight="25.0" prefWidth="50.0" promptText="Passout" />
+                  <JFXTextField fx:id="leavestudent" alignment="TOP_CENTER" labelFloat="true" layoutX="112.0" layoutY="98.0" prefHeight="25.0" prefWidth="50.0" promptText="Leave" />
+                  <JFXTextField fx:id="currentstudent" alignment="TOP_CENTER" labelFloat="true" layoutX="169.0" layoutY="14.0" prefHeight="25.0" prefWidth="87.0" promptText="Current" />
+                  <PieChart fx:id="studentpiechart" layoutX="2.0" layoutY="129.0" prefHeight="285.0" prefWidth="297.0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="418.0" prefWidth="321.0" style="-fx-background-color: #b3c23f;">
+               <children>
+                  <JFXTextField fx:id="Totalstaff" alignment="TOP_CENTER" labelFloat="true" layoutX="16.0" layoutY="14.0" prefHeight="25.0" prefWidth="87.0" promptText="Total Staff" />
+                  <JFXTextField fx:id="malestaff" alignment="TOP_CENTER" labelFloat="true" layoutX="35.0" layoutY="56.0" prefHeight="25.0" prefWidth="50.0" promptText="Male" />
+                  <JFXTextField fx:id="femalestaff" alignment="TOP_CENTER" labelFloat="true" layoutX="136.0" layoutY="56.0" prefHeight="25.0" prefWidth="50.0" promptText="Female" />
+                  <JFXTextField fx:id="leavestaff" alignment="TOP_CENTER" labelFloat="true" layoutX="212.0" layoutY="56.0" prefHeight="25.0" prefWidth="74.0" promptText="Leave" />
+                  <JFXTextField fx:id="currentstaff" alignment="TOP_CENTER" labelFloat="true" layoutX="205.0" layoutY="14.0" prefHeight="25.0" prefWidth="87.0" promptText="Current" />
+                  <PieChart fx:id="staffpiechart" layoutX="2.0" layoutY="91.0" prefHeight="323.0" prefWidth="321.0" />
+               </children>
+            </Pane>
+            <Pane prefHeight="308.0" prefWidth="242.0">
+               <children>
+                  <Pane layoutX="3.0" prefHeight="418.0" prefWidth="236.0" style="-fx-background-color: #28ae60;">
+                     <children>
+                        <JFXTextField fx:id="TotalUser" alignment="TOP_CENTER" labelFloat="true" layoutX="10.0" prefHeight="25.0" prefWidth="215.0" promptText="Total User" />
+                        <PieChart fx:id="totaluser" layoutY="39.0" prefHeight="378.0" prefWidth="236.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane prefHeight="418.0" prefWidth="327.0">
+               <children>
+                  <Pane prefHeight="418.0" prefWidth="312.0" style="-fx-background-color: #27ad96;">
+                     <children>
+                        <JFXTextField fx:id="totalemployee" alignment="TOP_CENTER" labelFloat="true" layoutX="16.0" layoutY="14.0" prefHeight="25.0" prefWidth="87.0" promptText="Total Employee" />
+                        <JFXTextField fx:id="maleemployee" alignment="TOP_CENTER" labelFloat="true" layoutX="35.0" layoutY="56.0" prefHeight="25.0" prefWidth="50.0" promptText="Male" />
+                        <JFXTextField fx:id="femaleemployee" alignment="TOP_CENTER" labelFloat="true" layoutX="131.0" layoutY="56.0" prefHeight="25.0" prefWidth="50.0" promptText="Female" />
+                        <JFXTextField fx:id="leaveemployee" alignment="TOP_CENTER" labelFloat="true" layoutX="216.0" layoutY="56.0" prefHeight="25.0" prefWidth="50.0" promptText="Leave" />
+                        <JFXTextField fx:id="currentemployee" alignment="TOP_CENTER" labelFloat="true" layoutX="198.0" layoutY="14.0" prefHeight="25.0" prefWidth="87.0" promptText="Current" />
+                        <PieChart fx:id="employeepiechart" layoutY="95.0" prefHeight="323.0" prefWidth="312.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

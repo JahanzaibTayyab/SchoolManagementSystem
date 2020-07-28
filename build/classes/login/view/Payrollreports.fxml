@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.Controller.PayrollreportsController">
+   <children>
+      <Pane prefHeight="106.0" prefWidth="644.0" style="-fx-background-color: #2d75e8;">
+         <children>
+            <Label alignment="TOP_CENTER" layoutY="28.0" prefHeight="32.0" prefWidth="636.0" text="Payroll Reports" textFill="#f8f5f5">
+               <font>
+                  <Font name="Georgia" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="274.0" layoutY="60.0" text="Assas High School" />
+         </children>
+      </Pane>
+      <Pane layoutX="1.0" layoutY="107.0" prefHeight="362.0" prefWidth="643.0">
+         <children>
+            <TabPane layoutX="-2.0" prefHeight="362.0" prefWidth="644.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Reports">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="333.0" prefWidth="681.0">
+                           <children>
+                              <Pane layoutX="2.0" layoutY="3.0" prefHeight="329.0" prefWidth="645.0">
+                                 <children>
+                                    <Button fx:id="ssave" layoutX="250.0" layoutY="65.0" mnemonicParsing="false" onMouseClicked="#EmployeeSalaryReports" prefHeight="42.0" prefWidth="211.0" stylesheets="@Style.css" text="Employee  Salary Reports" />
+                                    <Button fx:id="sclear" layoutX="243.0" layoutY="133.0" mnemonicParsing="false" onMouseClicked="#EmployeeAllownceReportButton" prefHeight="42.0" prefWidth="226.0" stylesheets="@Style.css" text="Employee Allownaces Report" />
+                                    <Button fx:id="generateslip" layoutX="247.0" layoutY="191.0" mnemonicParsing="false" onMouseClicked="#EmployeeDeductionButton" prefHeight="43.0" prefWidth="218.0" stylesheets="@Style.css" text="Employee Deduction Reports" />
+                                    <FontAwesomeIconView glyphName="PRINT" layoutX="252.0" layoutY="219.0" size="20" text="" />
+                                    <FontAwesomeIconView glyphName="PRINT" layoutX="255.0" layoutY="160.0" size="20" text="" />
+                                    <FontAwesomeIconView glyphName="PRINT" layoutX="261.0" layoutY="92.0" size="20" />
+                                    <Button fx:id="generateslip1" layoutX="247.0" layoutY="251.0" mnemonicParsing="false" onMouseClicked="#EmpoyeePaymentReports" prefHeight="43.0" prefWidth="218.0" stylesheets="@Style.css" text="Employee Payment Reports" />
+                                    <FontAwesomeIconView glyphName="PRINT" layoutX="252.0" layoutY="279.0" size="20" text="" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="FeeVoucherDetails" prefHeight="326.0" prefWidth="657.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.Controller.AddSubjectController">
+   <children>
+      <Pane prefHeight="129.0" prefWidth="657.0" style="-fx-background-color: #2d75e8;" AnchorPane.bottomAnchor="197.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="1.0" layoutY="40.0" prefHeight="38.0" prefWidth="467.0" text="Subject Information" textAlignment="CENTER" textFill="#ffeeee">
+               <font>
+                  <Font name="Times New Roman" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="117.0" layoutY="89.0" text="Assas High School" />
+         </children>
+      </Pane>
+      <JFXButton fx:id="back" alignment="CENTER" buttonType="RAISED" layoutX="484.0" layoutY="276.0" onMouseClicked="#viewButtonHandling" prefHeight="25.0" prefWidth="89.0" ripplerFill="#4745bf" style="-fx-background-color: #4745bf;" text="View" />
+      <Label layoutX="70.0" layoutY="167.0" text="Subject Name" />
+      <Label layoutX="70.0" layoutY="209.0" text="Teacher ID" />
+      <JFXTextField fx:id="subjectname" layoutX="160.0" layoutY="163.0" promptText="subject name" />
+      <JFXTextField fx:id="teacherid" layoutX="160.0" layoutY="205.0" promptText="teacher id" />
+      <JFXButton fx:id="Add" alignment="CENTER" buttonType="RAISED" layoutX="70.0" layoutY="276.0" onMouseClicked="#InsertButtonHandling" prefHeight="25.0" prefWidth="89.0" ripplerFill="#4745bf" style="-fx-background-color: #4745bf;" text="Insert" />
+      <JFXButton fx:id="Clear" alignment="CENTER" buttonType="RAISED" layoutX="375.0" layoutY="276.0" onMouseClicked="#resetButtonHandling" prefHeight="25.0" prefWidth="89.0" ripplerFill="#4745bf" style="-fx-background-color: #4745bf;" text="Reset" />
+      <JFXButton fx:id="Update" alignment="CENTER" buttonType="RAISED" layoutX="172.0" layoutY="276.0" onMouseClicked="#UpdateButtonHandling" prefHeight="25.0" prefWidth="89.0" ripplerFill="#4745bf" style="-fx-background-color: #4745bf;" text="Update" />
+      <Label layoutX="348.0" layoutY="167.0" text="Subject Code" />
+      <JFXTextField fx:id="subjectcode" layoutX="449.0" layoutY="163.0" prefHeight="25.0" prefWidth="124.0" promptText="subject code" />
+      <Label layoutX="346.0" layoutY="209.0" text="Book Name" />
+      <JFXTextField fx:id="bookname" layoutX="449.0" layoutY="205.0" prefHeight="25.0" prefWidth="124.0" promptText="book name" />
+      <Label layoutX="70.0" layoutY="246.0" text="Subject Marks" />
+      <JFXTextField fx:id="subjectmarks" layoutX="160.0" layoutY="242.0" promptText="Subject marks" />
+      <JFXButton fx:id="Clear1" alignment="CENTER" buttonType="RAISED" layoutX="274.0" layoutY="276.0" onMouseClicked="#DeleteButtonHandling" prefHeight="25.0" prefWidth="89.0" ripplerFill="#4745bf" style="-fx-background-color: #4745bf;" text="Delete" />
+   </children>
+</AnchorPane>

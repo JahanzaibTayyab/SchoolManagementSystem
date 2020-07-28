@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="Teacher" prefHeight="633.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.Controller.TeachersController">
+   <children>
+      <Pane prefHeight="135.0" prefWidth="1300.0" style="-fx-background-color: #001a80;">
+         <children>
+            <JFXRadioButton fx:id="allteacher" layoutX="307.0" layoutY="59.0" onAction="#AllTeacherButton" onMouseClicked="#AllTeacherRadioButtonHandling" text="All Teachers" textFill="#fffafa">
+               <toggleGroup>
+                  <ToggleGroup fx:id="check" />
+               </toggleGroup></JFXRadioButton>
+            <FontAwesomeIconView glyphName="USERS" layoutX="299.0" layoutY="71.0" wrappingWidth="15.857142448425293" />
+            <JFXRadioButton fx:id="male" layoutX="451.0" layoutY="59.0" onMouseClicked="#MaleTeacherRadioButtonHandling" text="Male" textFill="#fffafa" toggleGroup="$check" />
+            <FontAwesomeIconView glyphName="MALE" layoutX="443.0" layoutY="71.0" wrappingWidth="15.857142448425293" />
+            <JFXRadioButton fx:id="female" layoutX="547.0" layoutY="59.0" onAction="#FemaleTeacherButton" onMouseClicked="#FemaleTeacherRadioButtonHandling" text="Female" textFill="#fffafa" toggleGroup="$check" />
+            <FontAwesomeIconView glyphName="FEMALE" layoutX="539.0" layoutY="71.0" wrappingWidth="15.857142448425293" />
+            <Label alignment="TOP_CENTER" layoutX="32.0" layoutY="40.0" prefHeight="84.0" prefWidth="240.0" text="Teachers" textFill="#fff9f9">
+               <font>
+                  <Font name="Times New Roman" size="30.0" />
+               </font>
+            </Label>
+            <TextField fx:id="search" layoutX="918.0" layoutY="54.0" onAction="#SearchTeacherbyidHandling" prefHeight="25.0" prefWidth="305.0" promptText="Search by Staff id" />
+            <FontAwesomeIconView glyphName="SEARCH" layoutX="1203.0" layoutY="71.0" />
+            <JFXRadioButton fx:id="Active" layoutX="665.0" layoutY="59.0" onAction="#ActiveButton" onMouseClicked="#ActiveTeacherRadioButtonHandling" text="Active" textFill="#fffafa">
+               <toggleGroup>
+                  <ToggleGroup fx:id="check2" />
+               </toggleGroup></JFXRadioButton>
+            <JFXRadioButton fx:id="Unactive" layoutX="775.0" layoutY="59.0" onAction="#UnactiveButton" onMouseClicked="#ClearTeacherRadioButtonHandling" text="Unactive" textFill="#fffafa" toggleGroup="$check2" />
+            <FontAwesomeIconView glyphName="EYE" layoutX="659.0" layoutY="72.0" />
+            <FontAwesomeIconView glyphName="EYE_SLASH" layoutX="763.0" layoutY="72.0" />
+         </children>
+      </Pane>
+      <TableView fx:id="teachertable" layoutY="134.0" prefHeight="501.0" prefWidth="984.0">
+         <columns>
+            <TableColumn fx:id="col_sr" prefWidth="41.0" text="Sr" />
+            <TableColumn fx:id="col_staffid" prefWidth="68.0" text="Staff ID" />
+            <TableColumn fx:id="col_name" prefWidth="98.0" text="Name" />
+            <TableColumn fx:id="col_lname" prefWidth="92.0" text="L.Name" />
+            <TableColumn fx:id="col_cnic" prefWidth="92.0" text="CNIC" />
+            <TableColumn fx:id="col_cellno" prefWidth="84.0" text="Cell No" />
+            <TableColumn fx:id="col_pstatus" prefWidth="58.0" text="P.Status" />
+            <TableColumn fx:id="col_address" prefWidth="89.0" text="Address" />
+            <TableColumn fx:id="col_post" prefWidth="72.0" text="Post" />
+            <TableColumn fx:id="col_gender" prefWidth="76.0" text="Gender" />
+            <TableColumn fx:id="Col_Sstatus" prefWidth="64.0" text="S.Status" />
+            <TableColumn fx:id="col_doj" prefWidth="71.0" text="DOJ" />
+            <TableColumn fx:id="col_dol" prefWidth="78.0" text="DOL" />
+         </columns></TableView>
+      <PieChart fx:id="teacherpiechart" layoutX="984.0" layoutY="134.0" prefHeight="413.0" prefWidth="315.0" title="Teachers" />
+      <Button id="edit" fx:id="update" layoutX="1041.0" layoutY="556.0" mnemonicParsing="false" onMouseClicked="#UpdateTeacherButtonHandling" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #804d80;" text="Update" />
+      <Button id="edit" fx:id="delete" layoutX="1138.0" layoutY="556.0" mnemonicParsing="false" onMouseClicked="#DeleteTeacherButtonHandling" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #664db3;" text="Delete" />
+      <Button id="edit" fx:id="update1" layoutX="1041.0" layoutY="599.0" mnemonicParsing="false" onMouseClicked="#RefreshTable" prefHeight="25.0" prefWidth="186.0" style="-fx-background-color: #804d80;" text="Refresh Table" />
+   </children>
+</AnchorPane>

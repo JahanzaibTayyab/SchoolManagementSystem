@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="FeeVoucherDetails" prefHeight="536.0" prefWidth="762.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.Controller.FeeVoucherController">
+   <children>
+      <Pane prefHeight="113.0" prefWidth="762.0" style="-fx-background-color: #2d75e8;" AnchorPane.bottomAnchor="428.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="144.0" layoutY="40.0" text="Assas High School" textAlignment="CENTER" textFill="#ffeeee">
+               <font>
+                  <Font name="Times New Roman" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="144.0" layoutY="74.0" text="School Management System" />
+         </children>
+      </Pane>
+      <Pane layoutX="42.0" layoutY="110.0" prefHeight="384.0" prefWidth="691.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="110.0">
+         <children>
+            <GridPane alignment="CENTER" hgap="10.0" layoutX="-2.0" layoutY="4.0" prefHeight="376.0" prefWidth="695.0" style="-fx-background-color: #fff;" styleClass="button" stylesheets="@Style.css" vgap="5.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="125.0" prefWidth="173.0" text="Home">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="HOME" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="individualvoucher" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#PaidfeeentryButtonhandling" prefHeight="182.0" prefWidth="352.0" stylesheets="@Style.css" text="Paid Fee Entry" GridPane.columnIndex="1">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="FILE" size="50" />
+                     </graphic>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="classfee" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#ClassFeeandotherFixedduesButtonHandling" prefHeight="182.0" prefWidth="366.0" stylesheets="@Style.css" text="Class Fee and Other Fixed Dues">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="EDIT" size="50" />
+                     </graphic>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="combinedvoucher" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#GeneratemonthlyFeeButtonhandling" prefHeight="179.0" prefWidth="346.0" text="Generate Monthly Fee Voucher" GridPane.rowIndex="1">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="FILE" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="specialvoucher" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#IndividualVoucherButtonhandling" prefHeight="181.0" prefWidth="344.0" text="Individual Voucher" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="FILE" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

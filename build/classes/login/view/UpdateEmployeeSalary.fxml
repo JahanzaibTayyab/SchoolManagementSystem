@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.Controller.UpdateEmployeeSalaryController">
+   <children>
+      <Pane prefHeight="106.0" prefWidth="644.0" style="-fx-background-color: #2d75e8;">
+         <children>
+            <Label alignment="TOP_CENTER" layoutY="28.0" prefHeight="32.0" prefWidth="636.0" text="Salary Information" textFill="#f8f5f5">
+               <font>
+                  <Font name="Elephant" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="294.0" layoutY="68.0" text="Assas High School" />
+            <FontAwesomeIconView glyphName="EYE" layoutX="605.0" layoutY="93.0" onMouseClicked="#ViewActionButtonHandling" size="25" />
+         </children>
+      </Pane>
+      <Pane layoutX="1.0" layoutY="107.0" prefHeight="362.0" prefWidth="643.0">
+         <children>
+            <TabPane layoutX="-2.0" prefHeight="362.0" prefWidth="644.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Staff">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="333.0" prefWidth="681.0">
+                           <children>
+                              <Pane layoutX="2.0" layoutY="3.0" prefHeight="329.0" prefWidth="645.0">
+                                 <children>
+                                    <JFXTextField fx:id="staffid" labelFloat="true" layoutX="14.0" layoutY="23.0" onAction="#IDAction" promptText="Employee Id" />
+                                    <JFXTextField fx:id="staffname" labelFloat="true" layoutX="14.0" layoutY="71.0" promptText="Name" />
+                                    <JFXTextField fx:id="stafflastname" labelFloat="true" layoutX="14.0" layoutY="120.0" promptText="Last Name" />
+                                    <JFXTextField fx:id="scnic" labelFloat="true" layoutX="14.0" layoutY="165.0" promptText="CNIC" />
+                                    <JFXTextField fx:id="sphonenumber" labelFloat="true" layoutX="168.0" layoutY="165.0" promptText="Phone Number" />
+                                    <JFXTextField fx:id="saddress" labelFloat="true" layoutX="14.0" layoutY="207.0" prefHeight="25.0" prefWidth="293.0" promptText="Address" />
+                                    <JFXTextField fx:id="scity" labelFloat="true" layoutX="14.0" layoutY="257.0" promptText="City" />
+                                    <JFXTextField fx:id="sprovince" labelFloat="true" layoutX="168.0" layoutY="257.0" promptText="Province" />
+                                    <JFXTextField fx:id="sbloodgroup" labelFloat="true" layoutX="329.0" layoutY="23.0" promptText="Blood Group" />
+                                    <JFXTextField fx:id="sjoiningdate" labelFloat="true" layoutX="488.0" layoutY="23.0" promptText="Joing Date" />
+                                    <JFXTextField fx:id="steachinglevel" labelFloat="true" layoutX="329.0" layoutY="71.0" promptText="Teaching Level" />
+                                    <JFXTextField fx:id="sareaofintrest" labelFloat="true" layoutX="488.0" layoutY="71.0" promptText="Area of Intrest" />
+                                    <JFXTextField fx:id="sworkinghours" labelFloat="true" layoutX="329.0" layoutY="120.0" promptText="Working Hours" />
+                                    <JFXTextField fx:id="ssalary" labelFloat="true" layoutX="329.0" layoutY="165.0" prefHeight="25.0" prefWidth="293.0" promptText="Salary" />
+                                    <JFXTextField fx:id="spost" labelFloat="true" layoutX="488.0" layoutY="120.0" promptText="Post" />
+                                    <Button fx:id="ssave" layoutX="388.0" layoutY="264.0" mnemonicParsing="false" onMouseClicked="#UpdateButtonHandling" prefHeight="25.0" prefWidth="77.0" stylesheets="@Style.css" text="Update" />
+                                    <Button fx:id="sclear" layoutX="488.0" layoutY="264.0" mnemonicParsing="false" onAction="#ClearButtonHandling" prefHeight="25.0" prefWidth="77.0" stylesheets="@Style.css" text="Clear" />
+                                    <FontAwesomeIconView glyphName="SAVE" layoutX="396.0" layoutY="281.0" />
+                                    <FontAwesomeIconView glyphName="UNDO" layoutX="499.0" layoutY="281.0" />
+                                    <Label layoutX="363.0" layoutY="211.0" prefHeight="17.0" prefWidth="25.0" text="Date" />
+                                    <JFXDatePicker fx:id="date" layoutX="403.0" layoutY="207.0" />
+                                    <Pane fx:id="pane" layoutX="170.0" layoutY="19.0" prefHeight="130.0" prefWidth="130.0">
+                                       <children>
+                                          <ImageView fx:id="image" fitHeight="130.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

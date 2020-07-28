@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="FeeVoucherDetails" prefHeight="442.0" prefWidth="657.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.Controller.ViewSubjectController">
+   <children>
+      <Pane prefHeight="115.0" prefWidth="657.0" style="-fx-background-color: #2d75e8;" AnchorPane.bottomAnchor="327.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="1.0" layoutY="40.0" prefHeight="38.0" prefWidth="467.0" text="Subject Information" textAlignment="CENTER" textFill="#ffeeee">
+               <font>
+                  <Font name="Elephant" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="84.0" layoutY="91.0" text="Assas High School" />
+         </children>
+      </Pane>
+      <TableView fx:id="subjecttable" layoutX="5.0" layoutY="121.0" prefHeight="308.0" prefWidth="647.0">
+         <columns>
+            <TableColumn fx:id="col_sr" prefWidth="75.0" text="Sr" />
+            <TableColumn fx:id="col_name" prefWidth="141.0" text="Subject Name" />
+            <TableColumn fx:id="col_code" prefWidth="98.0" text="Subject Code" />
+            <TableColumn fx:id="col_TeacherID" prefWidth="89.0" text="Teacher ID" />
+            <TableColumn fx:id="col_book" prefWidth="132.0" text="Book Name" />
+            <TableColumn fx:id="col_marks" prefWidth="111.0" text="Toatl Marks" />
+         </columns></TableView>
+   </children>
+</AnchorPane>

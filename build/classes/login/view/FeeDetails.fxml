@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.Controller.FeeDetailsController">
+   <children>
+      <Pane prefHeight="135.0" prefWidth="1300.0" style="-fx-background-color: #001a80;">
+         <children>
+            <JFXRadioButton fx:id="feereceived" layoutX="299.0" layoutY="23.0" onMouseClicked="#ReceivedButtonHandling" text="Received" textFill="#fffafa">
+               <toggleGroup>
+                  <ToggleGroup fx:id="check" />
+               </toggleGroup></JFXRadioButton>
+            <FontAwesomeIconView glyphName="EYE" layoutX="291.0" layoutY="35.0" wrappingWidth="15.857142448425293" />
+            <JFXRadioButton fx:id="feereceiveable" layoutX="299.0" layoutY="76.0" onMouseClicked="#ReceiveableButtonHandling" text="Receiveable" textFill="#fffafa" toggleGroup="$check" />
+            <FontAwesomeIconView glyphName="EYE" layoutX="291.0" layoutY="89.0" wrappingWidth="15.857142448425293" />
+            <Label alignment="TOP_CENTER" layoutX="32.0" layoutY="40.0" prefHeight="84.0" prefWidth="240.0" text="Fee Detail" textFill="#fff9f9">
+               <font>
+                  <Font name="Times New Roman" size="30.0" />
+               </font>
+            </Label>
+            <TextField fx:id="search" layoutX="783.0" layoutY="101.0" onAction="#SearchbarHandling" prefHeight="25.0" prefWidth="506.0" promptText=" Search by Student id" />
+            <FontAwesomeIconView glyphName="SEARCH" layoutX="1265.0" layoutY="117.0" text="" />
+            <JFXComboBox fx:id="selectclass" focusColor="#e3e4e8" layoutX="539.0" layoutY="24.0" onAction="#SelectClassActionButtonHandling" prefHeight="25.0" prefWidth="122.0" promptText="Select " />
+            <JFXComboBox fx:id="month" focusColor="#e3e4e8" layoutX="544.0" layoutY="70.0" onAction="#MonthButtonHandling" prefHeight="25.0" prefWidth="86.0" promptText="month" />
+            <JFXComboBox fx:id="year" focusColor="#e3e4e8" layoutX="657.0" layoutY="70.0" onAction="#yearButtonHandling" prefHeight="25.0" prefWidth="86.0" promptText="year" />
+            <Pane layoutX="783.0" layoutY="8.0" prefHeight="84.0" prefWidth="506.0" style="-fx-background-color: #2e1e89;">
+               <children>
+                  <Label alignment="TOP_CENTER" layoutX="-1.0" layoutY="2.0" prefHeight="38.0" prefWidth="506.0" text="Defaulters Student" textFill="#fff9f9">
+                     <font>
+                        <Font name="Elephant" size="30.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="DeafulterClasses" layoutX="321.0" layoutY="45.0" onAction="#DefaulterClassButtonHandling" prefWidth="150.0" promptText="select" />
+                  <JFXRadioButton fx:id="defaulterwholestudent" layoutX="36.0" layoutY="49.0" onMouseClicked="#DefaultersStudentButtonHandling" prefHeight="17.0" prefWidth="102.0" text="Whole School" textFill="#fffafa">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="check2" />
+                     </toggleGroup></JFXRadioButton>
+               </children>
+            </Pane>
+            <JFXRadioButton fx:id="ClassRadioButton" layoutX="452.0" layoutY="28.0" onMouseClicked="#ClassRadioButtonHandling" text="Class" textFill="#fffafa">
+               <toggleGroup>
+                  <ToggleGroup fx:id="check3" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="Date" layoutX="452.0" layoutY="76.0" onMouseClicked="#DateRadioButtonHAndling" text="Date" textFill="#fffafa" toggleGroup="$check3" />
+         </children>
+      </Pane>
+      <TableView fx:id="studenttable" layoutY="134.0" prefHeight="422.0" prefWidth="1300.0">
+         <columns>
+            <TableColumn fx:id="col_sr" prefWidth="35.0" text="Sr" />
+            <TableColumn fx:id="col_id" prefWidth="70.0" text="Student ID" />
+            <TableColumn fx:id="col_name" prefWidth="121.0" text="Name" />
+            <TableColumn fx:id="col_month" prefWidth="54.0" text="Month" />
+            <TableColumn fx:id="col_year" prefWidth="51.0" text="Year" />
+            <TableColumn fx:id="col_class" prefWidth="60.0" text="Class" />
+            <TableColumn fx:id="col_section" prefWidth="65.0" text="Section" />
+            <TableColumn fx:id="col_cfee" prefWidth="68.0" text="Class Fee" />
+            <TableColumn fx:id="col_lastmonth" prefWidth="77.0" text="L.M.Dues" />
+            <TableColumn fx:id="col_gfee" prefWidth="69.0" text="Generator" />
+            <TableColumn fx:id="col_ffee" prefWidth="67.0" text="Function " />
+            <TableColumn fx:id="col_efee" prefWidth="54.0" text="Exams" />
+            <TableColumn fx:id="col_pfee" prefWidth="52.0" text="Party" />
+            <TableColumn fx:id="col_sfee" prefWidth="58.0" text="Sports" />
+            <TableColumn fx:id="col_tfee" prefWidth="56.0" text="Trip" />
+            <TableColumn fx:id="col_bfee" prefWidth="53.0" text="Books" />
+            <TableColumn fx:id="Col_sfee" prefWidth="73.0" text="Stationary" />
+            <TableColumn fx:id="col_ofee" prefWidth="52.0" text="Others" />
+            <TableColumn fx:id="col_others" prefWidth="49.0" text="Total" />
+            <TableColumn fx:id="col_paid" prefWidth="47.0" text="Paid" />
+            <TableColumn fx:id="col_balance" prefWidth="68.0" text="Balance" />
+         </columns></TableView>
+      <Label layoutX="598.0" layoutY="560.0" text="Total Amount">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="totalamount" layoutX="684.0" layoutY="556.0" promptText="total amount" />
+      <Label layoutX="848.0" layoutY="560.0" text="Total Paid">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="totalpaid" layoutX="911.0" layoutY="556.0" promptText="total paid" />
+      <Label layoutX="1060.0" layoutY="560.0" text="Balance">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="totalbalance" layoutX="1118.0" layoutY="556.0" promptText="balance" />
+      <Button layoutX="96.0" layoutY="565.0" mnemonicParsing="false" onMouseClicked="#RefreshTableButton" text="Refresh Table" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="home" onMouseClicked="#EventHandling" prefHeight="685.0" prefWidth="984.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.Controller.HomeController">
+   <children>
+      <Pane prefHeight="133.0" prefWidth="984.0" style="-fx-background-color: #2d75e8;" AnchorPane.bottomAnchor="552.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="144.0" layoutY="40.0" text="Assas High School" textAlignment="CENTER" textFill="#ffeeee">
+               <font>
+                  <Font name="Georgia" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="144.0" layoutY="75.0" text="School Management System" />
+         </children>
+      </Pane>
+      <Pane layoutX="42.0" layoutY="154.0" onMouseClicked="#BooksPriceButtonHandling" prefHeight="424.0" prefWidth="917.0" AnchorPane.bottomAnchor="107.0" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="154.0">
+         <children>
+            <GridPane alignment="CENTER" hgap="10.0" layoutX="66.0" layoutY="41.0" prefHeight="376.0" prefWidth="695.0" style="-fx-background-color: #fff;" styleClass="button" stylesheets="@Style.css" vgap="5.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="125.0" prefWidth="173.0" text="Home">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="HOME" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="student" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#StudentButtonEventHandling" prefHeight="125.0" prefWidth="173.0" stylesheets="@Style.css" text="Students" GridPane.columnIndex="1">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="GROUP" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="teacher" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#TeacherButtonEventHandling" prefHeight="125.0" prefWidth="173.0" text="Teachers" GridPane.columnIndex="2">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="GROUP" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="admission" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#AdmissionButtonEventHandling" prefHeight="125.0" prefWidth="173.0" text="Admission" GridPane.columnIndex="4">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="USER_PLUS" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="dashboard" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#DashBoardButtonHandling" prefHeight="115.0" prefWidth="163.0" stylesheets="@Style.css" text="Dash Board">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="HOME" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="resultcard" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#ResultcardButtonEventHandling" prefHeight="125.0" prefWidth="173.0" stylesheets="@Style.css" text="Result Card" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="GRADUATION_CAP" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="feevoucher" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#FeeVoucherButtonEventHandling" prefHeight="125.0" prefWidth="173.0" text="Fee Voucher" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="FILE" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="feedetails" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#FeeDetailsButtonEventHandling" prefHeight="125.0" prefWidth="173.0" text="Fee Details" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="BANK" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="searchteacher" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#BooksfeeButtonHandling" prefHeight="125.0" prefWidth="173.0" text="Books Price" GridPane.rowIndex="3">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="PENCIL_SQUARE_ALT" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="addemployee" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#AddEmployeeEventHandling" prefHeight="125.0" prefWidth="173.0" text="Add Employee" GridPane.rowIndex="1">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="USER_PLUS" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="reports" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#ReportButtonEventHandling" prefHeight="125.0" prefWidth="173.0" text="Reports" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="FILE_PDF_ALT" onMouseClicked="#ReportsActions" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Settings" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#SettingButtonHandling" prefHeight="125.0" prefWidth="173.0" text="Settings" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="SLIDERS" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="classfee" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#ClassfeeButtonEventHandling" prefHeight="125.0" prefWidth="173.0" text="Class Fee" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="PENCIL_SQUARE_ALT" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="addclass" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#AddClassButtonEventHandling" prefHeight="125.0" prefWidth="173.0" text="Add Class" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="LINK" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="searchemployee" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#SearchButtonEventHandling" prefHeight="125.0" prefWidth="173.0" text="Searching" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="SEARCH" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="aaddsubject" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#AddSubjectButtonEventHandling" prefHeight="125.0" prefWidth="173.0" text="Add Subject" GridPane.rowIndex="2">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="PENCIL_SQUARE" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Adduser" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#AddUserButtonHandling" prefHeight="125.0" prefWidth="173.0" text="Add User" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="USER_PLUS" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="payroll" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#PayRollButtonEventHandling" prefHeight="125.0" prefWidth="173.0" text="Pay Roll" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="CREDIT_CARD" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Attendance" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#AttendanceButtonEventHandling" prefHeight="125.0" prefWidth="173.0" text="Attendance" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="BAR_CHART" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="backup" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#BackupAndRestoreButtonHandling" prefHeight="125.0" prefWidth="173.0" text="Backup &amp; Restore" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="REFRESH" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="employees" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#EmployeeButtonEventHandling" prefHeight="125.0" prefWidth="173.0" text="Employees" GridPane.columnIndex="3">
+                     <graphic>
+                        <FontAwesomeIconView fill="#100ceb" glyphName="GROUP" size="50" />
+                     </graphic>
+                     <font>
+                        <Font name="Bell MT" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+      <JFXButton fx:id="logout" alignment="CENTER" buttonType="RAISED" layoutX="767.0" layoutY="611.0" onMouseClicked="#LogoutButtonAction" prefHeight="25.0" prefWidth="89.0" ripplerFill="#4745bf" style="-fx-background-color: #4745bf;" text="Log out" />
+   </children>
+</AnchorPane>

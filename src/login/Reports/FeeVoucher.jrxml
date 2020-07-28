@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FeeVoucher" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0a76f7f4-b339-437a-a1e1-56c5efd8e1d8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="93"/>
+	<property name="ireport.y" value="244"/>
+	<queryString>
+		<![CDATA[SELECT
+     feedetails.`feecode` AS feedetails_feecode,
+     feedetails.`StudentID` AS feedetails_StudentID,
+     feedetails.`StudentName` AS feedetails_StudentName,
+     feedetails.`Month` AS feedetails_Month,
+     feedetails.`Year` AS feedetails_Year,
+     feedetails.`Classfee` AS feedetails_Classfee,
+     feedetails.`GeneratorFee` AS feedetails_GeneratorFee,
+     feedetails.`FunctionFee` AS feedetails_FunctionFee,
+     feedetails.`ExamsFee` AS feedetails_ExamsFee,
+     feedetails.`BooksFee` AS feedetails_BooksFee,
+     feedetails.`PartyFee` AS feedetails_PartyFee,
+     feedetails.`SportsFee` AS feedetails_SportsFee,
+     feedetails.`TripFee` AS feedetails_TripFee,
+     feedetails.`StationaryFee` AS feedetails_StationaryFee,
+     feedetails.`Others` AS feedetails_Others,
+     feedetails.`TotalDues` AS feedetails_TotalDues,
+     feedetails.`Balance` AS feedetails_Balance,
+     feedetails.`ClassName` AS feedetails_ClassName,
+     feedetails.`Section` AS feedetails_Section,
+     feedetails.`Paid` AS feedetails_Paid,
+     feedetails.`AdmissionFee` AS feedetails_AdmissionFee,
+     feedetails.`SecurityFee` AS feedetails_SecurityFee,
+     feedetails.`Lastmonthdues` AS feedetails_Lastmonthdues
+FROM
+     `feedetails` feedetails]]>
+	</queryString>
+	<field name="feedetails_feecode" class="java.lang.Integer"/>
+	<field name="feedetails_StudentID" class="java.lang.String"/>
+	<field name="feedetails_StudentName" class="java.lang.String"/>
+	<field name="feedetails_Month" class="java.lang.String"/>
+	<field name="feedetails_Year" class="java.lang.String"/>
+	<field name="feedetails_Classfee" class="java.lang.Integer"/>
+	<field name="feedetails_GeneratorFee" class="java.lang.Integer"/>
+	<field name="feedetails_FunctionFee" class="java.lang.Integer"/>
+	<field name="feedetails_ExamsFee" class="java.lang.Integer"/>
+	<field name="feedetails_BooksFee" class="java.lang.Integer"/>
+	<field name="feedetails_PartyFee" class="java.lang.Integer"/>
+	<field name="feedetails_SportsFee" class="java.lang.Integer"/>
+	<field name="feedetails_TripFee" class="java.lang.Integer"/>
+	<field name="feedetails_StationaryFee" class="java.lang.Integer"/>
+	<field name="feedetails_Others" class="java.lang.Integer"/>
+	<field name="feedetails_TotalDues" class="java.lang.Integer"/>
+	<field name="feedetails_Balance" class="java.lang.Integer"/>
+	<field name="feedetails_ClassName" class="java.lang.String"/>
+	<field name="feedetails_Section" class="java.lang.String"/>
+	<field name="feedetails_Paid" class="java.lang.Integer"/>
+	<field name="feedetails_AdmissionFee" class="java.lang.Integer"/>
+	<field name="feedetails_SecurityFee" class="java.lang.Integer"/>
+	<field name="feedetails_Lastmonthdues" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="1" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="199" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="86" y="17" width="207" height="34" backcolor="#CCCCCC" uuid="85fcb98f-91a4-4823-afe1-ebc6c570e89d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="86" y="17" width="207" height="34" uuid="d9143ad9-de52-46e2-9acd-4fd44adf67b3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Assas High School]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="0" y="63" width="352" height="136" uuid="b1983ae6-1a72-4963-8e25-d5e2de993dcf"/>
+				<rectangle>
+					<reportElement x="0" y="0" width="200" height="20" uuid="fe4270dd-edfb-4103-b2be-c410832d9950"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="2" width="100" height="20" backcolor="#CCCCCC" uuid="34fc2a43-8e7a-4a28-a796-3d7a7e0f2181"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Student ID]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="100" y="2" width="100" height="20" uuid="4063566e-ca6b-41c9-be2a-568d7b82c1d1"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_StudentID}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="33" width="352" height="20" uuid="036b189a-2c09-4689-ac9d-a1e2e2a23def"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="33" width="51" height="20" backcolor="#CCCCCC" uuid="7d19063b-bf99-4bb8-85c1-9056cb54fc8b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Name]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="51" y="33" width="149" height="20" uuid="048fc652-b4bc-479b-9a57-82a7a8d82251"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_StudentName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="200" y="33" width="58" height="20" backcolor="#CCCCCC" uuid="f521fac6-bab6-45ca-95c0-9db101316c59"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Last Name]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="0" y="65" width="352" height="20" uuid="cf4b965d-dfa5-4f0a-b8d7-88ecd51e92eb"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="65" width="51" height="20" backcolor="#CCCCCC" uuid="7763b300-24a3-459c-b967-98533c6f5b41"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Class]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="51" y="65" width="149" height="20" uuid="d9e0e88d-f281-4b59-894e-b9c5463b0b61"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_ClassName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="200" y="65" width="58" height="20" backcolor="#CCCCCC" uuid="f948d775-a011-47bd-812f-0a7a3883ee82"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Section]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="258" y="65" width="94" height="20" uuid="aa6d9fc9-9f6a-4ebf-a902-e4d66fdebec4"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_Section}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="97" width="352" height="20" uuid="249aaaa5-94d0-43e0-ab16-157a1b64c0a4"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="97" width="51" height="20" backcolor="#CCCCCC" uuid="de651f3a-8f14-4f07-938a-4b351ef57984"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Month]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="51" y="97" width="49" height="20" uuid="8193c3d3-d50b-4000-981e-7789eb68bb3a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_Month}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="100" y="97" width="50" height="20" backcolor="#CCCCCC" uuid="36fed41e-7b7a-4a3f-be0a-f9204235c702"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Year]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="150" y="97" width="50" height="20" uuid="810caf37-8d4e-499c-bcc9-80a7a624e000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_Year}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="252" y="2" width="100" height="20" uuid="0b4eb861-c60c-4faa-99ad-0896fa660060"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Parents Copy]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement mode="Opaque" x="200" y="159" width="58" height="20" backcolor="#CCCCCC" uuid="90f8ef52-65cb-48ea-a47d-596ac48a6f06"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Fee Code]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="258" y="159" width="94" height="20" uuid="17d4e4a7-168d-4b5a-8c86-7a9f922da39b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{feedetails_feecode}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="440" y="62" width="352" height="136" uuid="00aecc4d-bdd5-4831-b3e1-7f3a4846729e"/>
+				<rectangle>
+					<reportElement x="0" y="0" width="200" height="20" uuid="846d3cb4-fd53-4525-b4e2-c6396bcb9dd2"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="2" width="100" height="20" backcolor="#CCCCCC" uuid="b61ad53a-b183-44e9-839b-1fbc8741cc6d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Student ID]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="100" y="2" width="100" height="20" uuid="d78c6fb2-2dd7-4d35-b0ff-536476c633eb"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_StudentID}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="33" width="352" height="20" uuid="02402e3b-4953-4c37-a75a-1afad5949db1"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="33" width="51" height="20" backcolor="#CCCCCC" uuid="e7ef2590-e4fe-4f83-9057-f35b12b59570"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Name]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="51" y="33" width="149" height="20" uuid="df3afd42-d3db-48a9-ab34-94ee869cec13"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_StudentName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="200" y="33" width="58" height="20" backcolor="#CCCCCC" uuid="0b6a4238-79e9-4f05-9bc0-40877767da77"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Last Name]]></text>
+				</staticText>
+				<rectangle>
+					<reportElement x="0" y="65" width="352" height="20" uuid="214e6fc2-b7e3-4e31-b851-55658bd24ed9"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="65" width="51" height="20" backcolor="#CCCCCC" uuid="64d1e46b-5e58-4509-8b1c-333a2ffd5291"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Class]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="51" y="65" width="149" height="20" uuid="34a21a32-bca1-47da-b0bf-77d1cdb511bc"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_ClassName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="200" y="65" width="58" height="20" backcolor="#CCCCCC" uuid="ad1e2acb-85c1-4bcf-83c8-d7f6b3e16474"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Section]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="258" y="65" width="94" height="20" uuid="2266b84b-6bd0-420d-8825-c3ee90c05ca9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_Section}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="97" width="352" height="20" uuid="1a212250-e8e3-4531-b7da-481816697f8e"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="97" width="51" height="20" backcolor="#CCCCCC" uuid="5d7c66f0-d9cf-47f1-81f6-8f284c776900"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Month]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="51" y="97" width="49" height="20" uuid="da157f2c-b8f2-4ba8-901f-0b83e0a573db"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_Month}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="100" y="97" width="50" height="20" backcolor="#CCCCCC" uuid="b0eab987-6451-4be3-b08a-d541e688de51"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Year]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="150" y="97" width="50" height="20" uuid="a0d838ef-bfef-4ab0-baa2-854efa94a8b4"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_Year}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="252" y="0" width="100" height="20" uuid="b062033c-9a29-4c3d-9fb5-9afae823907d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fee Office Copy]]></text>
+				</staticText>
+			</frame>
+			<textField>
+				<reportElement x="698" y="159" width="94" height="20" uuid="84488821-37a4-4dc8-82e3-88abd9fc0164"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{feedetails_feecode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="640" y="159" width="58" height="20" backcolor="#CCCCCC" uuid="42de92e7-30be-4db3-b0f6-35065ec90a58"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Fee Code]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="526" y="17" width="207" height="34" backcolor="#CCCCCC" uuid="ecbe3ee1-5f72-4ff9-a986-f1d45b2fc741"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="526" y="17" width="207" height="34" uuid="17771c19-8879-43d3-a5be-000f1e5bf4e0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Assas High School]]></text>
+			</staticText>
+		</band>
+		<band height="241">
+			<frame>
+				<reportElement x="0" y="0" width="352" height="240" uuid="b1fce72b-0a80-4f4a-bdf5-521a6b562765"/>
+				<rectangle>
+					<reportElement x="0" y="0" width="352" height="20" uuid="fef13abe-8945-44f3-be83-857bba74b888"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="168" height="20" backcolor="#CCCCCC" uuid="ec49ceee-d39d-44c2-a0b3-12ce2556629c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Class Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="0" width="184" height="20" uuid="b5cb25a0-5e12-47cc-ac7c-c4d2835dcc3f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_Classfee}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="20" width="352" height="20" uuid="4b28fa21-1921-4100-a905-20d18e39e2fc"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="0" y="40" width="352" height="20" uuid="d34134c6-71fc-4a7e-abf7-3c499fff3c80"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="20" width="168" height="20" backcolor="#CCCCCC" uuid="21b53039-4fd2-439e-a383-55021a09131a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Admission Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="20" width="184" height="20" uuid="cf15ecd4-fa56-4097-b1ec-8ce0903dae7d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_AdmissionFee}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="40" width="168" height="20" backcolor="#CCCCCC" uuid="07e897c3-2bb8-427b-b7ec-4edfc8babd46"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Security Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="40" width="184" height="20" uuid="83e8678a-19c9-46c8-8243-011a046d477d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_SecurityFee}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="60" width="352" height="20" uuid="a58e63f2-6c78-407b-98c3-fc940ffb0ef9"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="60" width="168" height="20" backcolor="#CCCCCC" uuid="3379b94c-603b-40d1-b29e-1763c1a0e285"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Last Month Dues]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="60" width="184" height="20" uuid="4dbf65e7-6f3e-4057-93ac-006f4305d54d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_Lastmonthdues}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="80" width="352" height="20" uuid="31401829-0acb-4f0a-8b50-e4b30275ec50"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="80" width="168" height="20" backcolor="#CCCCCC" uuid="9b3463b6-26f2-40db-8952-b9ea56999731"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Generator Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="80" width="184" height="20" uuid="fc90edf3-729c-4e32-b182-b565060fc50d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_GeneratorFee}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="100" width="352" height="20" uuid="d9cb84b7-5c1c-464e-a547-7127b2be225c"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="100" width="168" height="20" backcolor="#CCCCCC" uuid="2f4d90ce-d4c8-4b80-9704-117e8fbf9231"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Function Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="100" width="184" height="20" uuid="975713a6-5ac9-4663-abd7-80001fad7bb3"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_FunctionFee}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="120" width="352" height="20" uuid="60ef0102-349e-45f2-b092-af8717a5b999"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="120" width="168" height="20" backcolor="#CCCCCC" uuid="0ca4c2bb-e686-4e26-a820-33a0670f19b7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Exams Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="120" width="184" height="20" uuid="b15d9534-0b6f-46f8-a96d-d8d606334355"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_ExamsFee}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="140" width="352" height="20" uuid="0d7dd7f9-82d8-4294-ad00-1317f137bf78"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="140" width="168" height="20" backcolor="#CCCCCC" uuid="2ba69bee-2621-44f2-b807-556c9771bdc5"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Books Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="140" width="184" height="20" uuid="2fd1f86b-edd2-43fc-871f-8bbc3cb48e90"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_BooksFee}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="160" width="352" height="20" uuid="b6985538-4539-4bcb-81c5-ee5c2384827d"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="160" width="168" height="20" backcolor="#CCCCCC" uuid="ab2396cc-b77d-4524-adb1-04cd2d7a0c32"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Trip Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="160" width="184" height="20" uuid="95b3ece2-a580-4c12-8238-8bcf6218ff88"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_TripFee}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="180" width="352" height="20" uuid="4f35bf18-993c-4bff-9847-3dfde644e0e5"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="180" width="168" height="20" backcolor="#CCCCCC" uuid="a8d0f643-a161-4351-88f6-eb8eab522a09"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Stationary Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="180" width="184" height="20" uuid="4c2aff7c-6edf-4b05-b7a8-1b853192e591"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_StationaryFee}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="200" width="352" height="20" uuid="b275505a-5cb1-4f0c-91e7-1607ab0d49dd"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="200" width="168" height="20" backcolor="#CCCCCC" uuid="59f7c574-5602-459d-8f84-2ad764b39853"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Others Charges]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="200" width="184" height="20" uuid="e5cc6175-2291-4fdb-b5bb-172d3827e463"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_Others}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="220" width="352" height="20" uuid="b4e06b17-a0db-4859-b55c-31ea4a783b92"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="220" width="168" height="20" backcolor="#CCCCCC" uuid="0ee90e7a-212a-470d-898a-38a3c9076b07"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Total Dues]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="220" width="184" height="20" uuid="0d760615-60f3-4c6f-a4cd-b54f5483af50"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_TotalDues}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="440" y="0" width="352" height="240" uuid="7a4650de-84ff-47f5-ba03-429085d7f0c9"/>
+				<rectangle>
+					<reportElement x="0" y="0" width="352" height="20" uuid="856ba2f0-4b1f-4345-bc3b-a52fd5908b75"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="168" height="20" backcolor="#CCCCCC" uuid="525c85d7-dcb4-4d19-8e96-38a673126b27"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Class Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="0" width="184" height="20" uuid="63e64c0b-3afb-4b7f-80c6-65b50bc676fd"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_Classfee}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="20" width="352" height="20" uuid="80dd158a-e528-4d75-9ed0-7bcc39566833"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="0" y="40" width="352" height="20" uuid="995618b9-d05a-4fb3-bbff-1cd57376ac6e"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="20" width="168" height="20" backcolor="#CCCCCC" uuid="20836be8-9031-43ae-9297-250c5f8977f9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Admission Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="20" width="184" height="20" uuid="1302e3bb-cd9e-496a-a077-b6f4417df4e8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_AdmissionFee}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="40" width="168" height="20" backcolor="#CCCCCC" uuid="8e7dc814-cf54-464c-a793-126d44cef77a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Security Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="40" width="184" height="20" uuid="c7a45de7-0874-4def-9671-2c96f15558b8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_SecurityFee}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="60" width="352" height="20" uuid="cd9d7453-679c-4c47-a951-977a819828a4"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="60" width="168" height="20" backcolor="#CCCCCC" uuid="0dc1e42c-3ef8-4253-8a3e-06d6683df653"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Last Month Dues]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="60" width="184" height="20" uuid="5162cc7e-9c11-46e8-8d52-8dcc9a2dc51a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_Lastmonthdues}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="80" width="352" height="20" uuid="018c0c14-77ed-4cc6-9c51-031cf6ba62ca"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="80" width="168" height="20" backcolor="#CCCCCC" uuid="60cceca5-34e9-4af7-90ce-475d32c8a1b8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Generator Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="80" width="184" height="20" uuid="af875f82-b5cd-45fb-a07f-faccd6a0087e"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_GeneratorFee}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="100" width="352" height="20" uuid="1e8048a4-f55c-48ff-88b1-f3e5b17424d3"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="100" width="168" height="20" backcolor="#CCCCCC" uuid="19bc387e-6116-4295-906c-f214cce6ebb5"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Function Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="100" width="184" height="20" uuid="a979b71d-e2eb-49c0-bf08-b24b3e7fd9bd"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_FunctionFee}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="120" width="352" height="20" uuid="23dedd8e-c59b-44af-baf9-04f977806517"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="120" width="168" height="20" backcolor="#CCCCCC" uuid="0dc4857d-8516-4a8f-a050-aa41c1d5b335"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Exams Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="120" width="184" height="20" uuid="97623651-fc5d-4057-b087-07ec9c979a2f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_ExamsFee}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="140" width="352" height="20" uuid="2a6b65d2-7dec-4b07-a94f-48e17c246275"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="140" width="168" height="20" backcolor="#CCCCCC" uuid="464b8fc8-5fb9-4b39-a250-0bfab6e6c1b0"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Books Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="140" width="184" height="20" uuid="3562389a-77c1-4ea7-9e28-53a559987c76"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_BooksFee}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="160" width="352" height="20" uuid="75f54ab7-5c17-4d1f-ab83-aa0539002131"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="160" width="168" height="20" backcolor="#CCCCCC" uuid="e6ccdaef-1111-448d-a452-b89bbe890358"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Trip Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="160" width="184" height="20" uuid="e9e1d249-91fb-4ad1-92cf-3e03cfb9098a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_TripFee}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="180" width="352" height="20" uuid="c319462f-7843-4a8a-a04f-c7e3e76fea25"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="180" width="168" height="20" backcolor="#CCCCCC" uuid="61ee083c-8e84-4e52-b65a-b8b40627a995"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Stationary Fee]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="180" width="184" height="20" uuid="0394b2c6-253c-4367-a7eb-413007efafa7"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_StationaryFee}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="200" width="352" height="20" uuid="7b19a454-b7a3-4aaf-9a1a-76af4b07fa9f"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="200" width="168" height="20" backcolor="#CCCCCC" uuid="c633bf88-d356-460f-991e-18686ca22aee"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Others Charges]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="200" width="184" height="20" uuid="693ab681-69d5-433c-a244-4b2dffd72415"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_Others}]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement x="0" y="220" width="352" height="20" uuid="65cc6f08-72ea-47d7-9789-04210a485c0b"/>
+				</rectangle>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="220" width="168" height="20" backcolor="#CCCCCC" uuid="e67db5cc-eac6-4334-b0d2-4ef6f14b88ef"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Total Dues]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="168" y="220" width="184" height="20" uuid="d64c104a-e37c-4784-940b-3e5b34d049e9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{feedetails_TotalDues}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+		<band height="85">
+			<rectangle radius="10">
+				<reportElement x="0" y="5" width="352" height="20" backcolor="#CCCCCC" uuid="80be4726-22fc-47a0-b99e-c910372db35f"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="12" y="5" width="340" height="20" uuid="fd1c630e-963d-41c7-8384-a848f7a4c154"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[It is requested that parents should clear all dues before the last date]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="440" y="5" width="352" height="20" backcolor="#CCCCCC" uuid="fde8232c-f7d8-43c0-88d0-7fa683e52a9e"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="452" y="5" width="340" height="20" uuid="8f4b49c7-bf2f-4044-bc81-f27473e2f5b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[It is requested that parents should clear all dues before the last date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="252" y="70" width="100" height="15" uuid="96cbf17a-9fde-4347-b1c1-586cd33809f4"/>
+				<text><![CDATA[Princle Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="70" width="100" height="15" uuid="f61e71be-6ec4-4a8a-a6a3-3f1b3ef3fc5d"/>
+				<text><![CDATA[Receiver Singnature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="452" y="70" width="100" height="15" uuid="af1e8f2f-8f68-4db6-9248-c9afb02b0f3c"/>
+				<text><![CDATA[Receiver Singnature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="704" y="70" width="100" height="15" uuid="e483e3b0-e7ec-41c5-a858-f4f46bdc20bf"/>
+				<text><![CDATA[Princle Signature]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="72" y="25" width="207" height="20" uuid="2c3a09fb-d325-46fd-9d42-626782cb0de4"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="86" y="25" width="172" height="20" uuid="33ac13dc-dfab-4b06-b0c2-af53787f3875"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Due Date:10th of Current Month]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="526" y="25" width="207" height="20" uuid="d052e7a5-ee28-4eb8-84a5-4f1a73ee7596"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="540" y="25" width="172" height="20" uuid="7549f407-4b82-412e-8c60-6744ed211972"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Due Date:10th of Current Month]]></text>
+			</staticText>
+			<image>
+				<reportElement x="733" y="35" width="59" height="35" uuid="0a76ccb1-4e84-496d-bbb6-344466cd865c"/>
+				<imageExpression><![CDATA["E:\\SchoolManagementSystem\\src\\login\\images\\IMG_20190217_104922.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="279" y="35" width="59" height="35" uuid="8e6ccff7-6b6f-4858-affe-01c6bd55acf7"/>
+				<imageExpression><![CDATA["E:\\SchoolManagementSystem\\src\\login\\images\\IMG_20190217_104922.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="5" width="72" height="13" uuid="417d7db8-4099-4e74-a354-35d5cf5f367e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Printing Date]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="72" y="5" width="100" height="13" uuid="84778f52-265e-4159-b592-7307cb15678a"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="526" y="5" width="100" height="13" uuid="569e07a1-b33b-43ca-8616-69891ffe8b56"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="454" y="5" width="72" height="13" uuid="e03f628e-36cd-4beb-8b77-29e4dedc4463"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Printing Date]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

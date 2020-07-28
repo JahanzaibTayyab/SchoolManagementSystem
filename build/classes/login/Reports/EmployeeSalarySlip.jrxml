@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EmployeeSalarySlip" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="923735c8-f00f-4aa6-9cf3-e20228388bcc">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="480"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[SELECT
+     employeesalary.`employeeid` AS employeesalary_employeeid,
+     employeesalary.`EmployeeName` AS employeesalary_EmployeeName,
+     employeesalary.`WorkingHours` AS employeesalary_WorkingHours,
+     employeesalary.`salary` AS employeesalary_salary,
+     employeesalary.`Date` AS employeesalary_Date,
+     employeesalary.`post` AS employeesalary_post,
+     employeesalary.`Dateofjoing` AS employeesalary_Dateofjoing,
+     employededucation.`employeeid` AS employededucation_employeeid,
+     employededucation.`EmployeeName` AS employededucation_EmployeeName,
+     employededucation.`Post` AS employededucation_Post,
+     employededucation.`DeductionAmount` AS employededucation_DeductionAmount,
+     employededucation.`SalaryAfterDeducation` AS employededucation_SalaryAfterDeducation,
+     employededucation.`Reason` AS employededucation_Reason,
+     employededucation.`Month` AS employededucation_Month,
+     employededucation.`year` AS employededucation_year,
+     employeeallowance.`employeeid` AS employeeallowance_employeeid,
+     employeeallowance.`EmployeeName` AS employeeallowance_EmployeeName,
+     employeeallowance.`Post` AS employeeallowance_Post,
+     employeeallowance.`OverTime` AS employeeallowance_OverTime,
+     employeeallowance.`Medical` AS employeeallowance_Medical,
+     employeeallowance.`Bounce` AS employeeallowance_Bounce,
+     employeeallowance.`HomeAllowance` AS employeeallowance_HomeAllowance,
+     employeeallowance.`TransportAllowance` AS employeeallowance_TransportAllowance,
+     employeeallowance.`Others` AS employeeallowance_Others,
+     employeeallowance.`TotalAllownace` AS employeeallowance_TotalAllownace,
+     employeeallowance.`Month` AS employeeallowance_Month,
+     employeeallowance.`Year` AS employeeallowance_Year,
+     employeeallowance.`TotalSalary` AS employeeallowance_TotalSalary,
+     employeepayment.`employeeid` AS employeepayment_employeeid,
+     employeepayment.`EmployeeName` AS employeepayment_EmployeeName,
+     employeepayment.`Post` AS employeepayment_Post,
+     employeepayment.`Salary` AS employeepayment_Salary,
+     employeepayment.`PaidSalry` AS employeepayment_PaidSalry,
+     employeepayment.`Status` AS employeepayment_Status,
+     employeepayment.`month` AS employeepayment_month,
+     employeepayment.`year` AS employeepayment_year,
+     employeepayment.`balance` AS employeepayment_balance,
+     employeepayment.`TotalSalary` AS employeepayment_TotalSalary
+FROM
+     `employeesalary` employeesalary,
+     `employededucation` employededucation,
+     `employeeallowance` employeeallowance,
+     `employeepayment` employeepayment]]>
+	</queryString>
+	<field name="employeesalary_employeeid" class="java.lang.String"/>
+	<field name="employeesalary_EmployeeName" class="java.lang.String"/>
+	<field name="employeesalary_WorkingHours" class="java.lang.Integer"/>
+	<field name="employeesalary_salary" class="java.lang.Integer"/>
+	<field name="employeesalary_Date" class="java.sql.Date"/>
+	<field name="employeesalary_post" class="java.lang.String"/>
+	<field name="employeesalary_Dateofjoing" class="java.lang.String"/>
+	<field name="employededucation_employeeid" class="java.lang.String"/>
+	<field name="employededucation_EmployeeName" class="java.lang.String"/>
+	<field name="employededucation_Post" class="java.lang.String"/>
+	<field name="employededucation_DeductionAmount" class="java.lang.String"/>
+	<field name="employededucation_SalaryAfterDeducation" class="java.lang.String"/>
+	<field name="employededucation_Reason" class="java.lang.String"/>
+	<field name="employededucation_Month" class="java.lang.String"/>
+	<field name="employededucation_year" class="java.lang.String"/>
+	<field name="employeeallowance_employeeid" class="java.lang.String"/>
+	<field name="employeeallowance_EmployeeName" class="java.lang.String"/>
+	<field name="employeeallowance_Post" class="java.lang.String"/>
+	<field name="employeeallowance_OverTime" class="java.lang.Integer"/>
+	<field name="employeeallowance_Medical" class="java.lang.Integer"/>
+	<field name="employeeallowance_Bounce" class="java.lang.Integer"/>
+	<field name="employeeallowance_HomeAllowance" class="java.lang.Integer"/>
+	<field name="employeeallowance_TransportAllowance" class="java.lang.Integer"/>
+	<field name="employeeallowance_Others" class="java.lang.Integer"/>
+	<field name="employeeallowance_TotalAllownace" class="java.lang.Integer"/>
+	<field name="employeeallowance_Month" class="java.lang.String"/>
+	<field name="employeeallowance_Year" class="java.lang.String"/>
+	<field name="employeeallowance_TotalSalary" class="java.lang.Integer"/>
+	<field name="employeepayment_employeeid" class="java.lang.String"/>
+	<field name="employeepayment_EmployeeName" class="java.lang.String"/>
+	<field name="employeepayment_Post" class="java.lang.String"/>
+	<field name="employeepayment_Salary" class="java.lang.Integer"/>
+	<field name="employeepayment_PaidSalry" class="java.lang.Integer"/>
+	<field name="employeepayment_Status" class="java.lang.String"/>
+	<field name="employeepayment_month" class="java.lang.String"/>
+	<field name="employeepayment_year" class="java.lang.String"/>
+	<field name="employeepayment_balance" class="java.lang.Integer"/>
+	<field name="employeepayment_TotalSalary" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="128" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="95" y="0" width="399" height="62" uuid="4d473a5b-620e-48f7-81d7-58e98c5335f4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Assas High School]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="184" y="62" width="196" height="22" forecolor="#000000" uuid="135e0e54-8f9a-4430-96dc-f93ee5f8c195"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Salary Slip]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="84" width="383" height="42" uuid="beda71c0-260c-4ee9-89ac-e52f597453f1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Shair kot Road Dholan Hithar                                 Tel:(+92) 3004741672]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="17" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="03c1131d-669f-4541-9f65-b7cc9be578b4"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="350" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="173" y="8" width="100" height="20" backcolor="#CCCCCC" uuid="bad8e82c-4c39-4fd4-acd7-0723c048c0cd"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Employee Info]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="0" y="28" width="550" height="85" uuid="18ce2134-d758-4217-89f1-22741b1856b2"/>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="0" y="0" width="94" height="25" forecolor="#000000" backcolor="#CCCCCC" uuid="140d451f-0726-44a6-9739-eec136580164"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Employee ID]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="94" y="0" width="165" height="25" uuid="cd891eb0-845f-41fd-9956-a4143875b677"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeesalary_employeeid}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="1" y="25" width="93" height="26" forecolor="#000000" backcolor="#CCCCCC" uuid="9f73016f-e272-426e-8cf3-07a309195c74"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Employee Name]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="94" y="25" width="165" height="26" uuid="0ce4b54a-6a9c-4df1-abe5-94f71c3ae1a5"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeesalary_EmployeeName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="285" y="25" width="95" height="26" forecolor="#000000" backcolor="#CCCCCC" uuid="62f84b65-c1df-4a3a-bd2b-5f9c590d446a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Date]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="380" y="25" width="152" height="26" uuid="3f107443-2a76-45f8-a34e-9bb6235eecea"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeesalary_Date}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="1" y="51" width="94" height="29" forecolor="#000000" backcolor="#CCCCCC" uuid="ec724745-5df8-423f-8819-81b1c9b778d4"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Post]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="95" y="51" width="164" height="29" uuid="342207a0-5a07-4c1e-8b5c-fb6545101c93"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeesalary_post}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="285" y="51" width="95" height="29" forecolor="#000000" backcolor="#CCCCCC" uuid="124363b6-465b-4c95-ac09-d1e464039f69"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Date of Join]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="380" y="51" width="152" height="29" uuid="72169f21-cc96-44c0-abf0-d7cafa33abfa"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeesalary_Dateofjoing}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="1" y="144" width="549" height="38" uuid="62167ad7-c140-43e3-84f9-0c5822ebaf33"/>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="0" y="0" width="94" height="27" forecolor="#000000" backcolor="#CCCCCC" uuid="714f02cf-1c6f-4f96-9b59-83e04b349685"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Working Hours]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="93" y="0" width="159" height="27" uuid="d1e1966c-20ca-4bff-a196-7eecc188ea0d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeesalary_WorkingHours}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="284" y="0" width="95" height="27" forecolor="#000000" backcolor="#CCCCCC" uuid="94d4d912-f9c7-4689-be9d-9822a4f89f75"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Salary]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="379" y="0" width="152" height="27" uuid="f0fb2e83-3f3c-4ef8-918e-a693a401dce2"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeesalary_salary}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement mode="Opaque" x="173" y="124" width="100" height="20" backcolor="#CCCCCC" uuid="fd5a0cf2-59c8-456b-bac9-ec68e4d95d67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Basic Salary]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="173" y="185" width="100" height="20" backcolor="#CCCCCC" uuid="47b3de06-feec-4862-b80d-7b7657d732e1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Allowances]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="0" y="205" width="550" height="141" uuid="081a12ea-f6b9-41ee-b43f-22f3a371c69a"/>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="1" y="29" width="94" height="25" forecolor="#000000" backcolor="#CCCCCC" uuid="955add21-a366-49ec-8e7b-b696f3971df4"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Over Time]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="94" y="29" width="128" height="25" uuid="c295210f-3b4a-4f9f-8505-3e021806d268"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeallowance_OverTime}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="285" y="29" width="95" height="25" forecolor="#000000" backcolor="#CCCCCC" uuid="01f984fc-4d69-451c-83c6-56626ff36ced"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Medical]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="380" y="29" width="152" height="25" uuid="53de939e-bf5d-45c6-b95f-20ad2baee165"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeallowance_Medical}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="1" y="54" width="93" height="27" forecolor="#000000" backcolor="#CCCCCC" uuid="701f227a-847e-4fff-956f-721b94e2b72c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Bounce]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="94" y="54" width="128" height="27" uuid="20f01c79-34b5-4e93-a861-563ef28b9c0c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeallowance_Bounce}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="285" y="54" width="95" height="27" forecolor="#000000" backcolor="#CCCCCC" uuid="867ac8a9-3062-4ddc-b1ae-49c0b46451d6"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Home Allownace]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="380" y="54" width="152" height="27" uuid="3d0d3014-8694-49fc-a11e-693fdb947951"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeallowance_HomeAllowance}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="1" y="81" width="93" height="27" forecolor="#000000" backcolor="#CCCCCC" uuid="b3788044-b919-426b-8033-19e5a25c6398"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Transport]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="94" y="81" width="128" height="27" uuid="89c8bae4-b763-45ae-8e31-e9e09ee43992"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeallowance_TransportAllowance}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="285" y="81" width="95" height="27" forecolor="#000000" backcolor="#CCCCCC" uuid="e8124bc5-66c3-43ba-aba1-baa5a9153029"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Others]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="380" y="81" width="152" height="27" uuid="7e69a9f4-637d-46d5-9b73-c152f46469ee"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeallowance_Others}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="1" y="107" width="93" height="26" forecolor="#000000" backcolor="#CCCCCC" uuid="16262fd6-a402-431a-8d2c-0eeff41df0eb"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Total Allownace]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="94" y="108" width="128" height="25" uuid="05a62930-0fb3-4146-98a8-fac1799e0a07"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeallowance_TotalAllownace}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="285" y="108" width="95" height="25" forecolor="#000000" backcolor="#CCCCCC" uuid="97c5fb95-a5a8-44cb-aba0-c2f2d2793981"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Total Salary]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="380" y="108" width="152" height="25" uuid="2f685316-595e-4904-a7c9-9df314d5354b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeallowance_TotalSalary}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="94" y="0" width="128" height="29" uuid="8d6bc2d2-c03e-44a1-b644-0379863cc873"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeallowance_Month}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="285" y="0" width="95" height="29" forecolor="#000000" backcolor="#CCCCCC" uuid="af7de634-3690-4dd3-b6a6-29014d197227"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Year]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="380" y="0" width="152" height="29" uuid="5ede5fd8-f2f2-488a-b2a1-6fea2140715d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeallowance_Year}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="1" y="294" width="93" height="29" forecolor="#000000" backcolor="#CCCCCC" uuid="4842cfdd-bbb3-4a4c-b6b1-0eaa2c7db4c1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Month]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="120" width="549" height="1" uuid="b38054e6-cb1b-41f3-aa6b-6481c047f272"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="175" width="549" height="1" uuid="e09dfcd0-c5eb-4ddf-bc49-2a3f2263fb92"/>
+			</line>
+			<line>
+				<reportElement x="0" y="346" width="549" height="1" uuid="0a860d51-81f8-4170-a7b0-1fac7635fa72"/>
+			</line>
+		</band>
+		<band height="263">
+			<frame>
+				<reportElement x="8" y="20" width="549" height="109" uuid="f61e60b6-3f43-4db8-b684-d0dd0e918d4c"/>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="0" y="11" width="119" height="25" forecolor="#000000" backcolor="#CCCCCC" uuid="47a94b75-19e0-4290-8625-747143c54610"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Month]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="94" y="11" width="127" height="25" uuid="f567ed4f-f11d-49c5-941c-53d2d2299634"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employededucation_Month}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="285" y="11" width="152" height="25" forecolor="#000000" backcolor="#CCCCCC" uuid="8f330b89-28f4-4603-bf42-6549bdbb0aef"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Year]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="437" y="11" width="95" height="25" uuid="de404d2a-6396-42bb-817a-952a6778211f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employededucation_year}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="1" y="36" width="118" height="31" forecolor="#000000" backcolor="#CCCCCC" uuid="92c3f3b7-098f-44bb-8912-e0c76e4316bb"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Deducation Amount]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="119" y="36" width="102" height="31" uuid="6f08d874-5e58-46d6-9306-c32788c672d4"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employededucation_DeductionAmount}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="285" y="36" width="152" height="31" forecolor="#000000" backcolor="#CCCCCC" uuid="0843743d-69d6-4add-b5ac-48d34c1ae3c8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Salary After Deducation]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="437" y="36" width="95" height="31" uuid="05112808-a6de-48a0-8ab0-8f8f6ae53439"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employededucation_SalaryAfterDeducation}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="1" y="67" width="118" height="31" forecolor="#000000" backcolor="#CCCCCC" uuid="96fdf487-af0a-4b44-b84a-a62fe19c775c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Reason]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="119" y="67" width="413" height="31" uuid="73e5205b-ac6d-4bec-b5ad-9d1035a791fb"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employededucation_Reason}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement mode="Opaque" x="173" y="129" width="100" height="20" backcolor="#CCCCCC" uuid="56730984-de90-43ff-b983-3ec9e395ec2b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Payment]]></text>
+			</staticText>
+			<frame>
+				<reportElement x="7" y="149" width="548" height="110" uuid="2813b171-b274-40e8-92d0-e6ba16450a42"/>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="1" y="30" width="118" height="26" forecolor="#000000" backcolor="#CCCCCC" uuid="53650781-49c4-43e4-bcbc-fbfa67310b3c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Basic Salary]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="119" y="30" width="102" height="26" uuid="b89e120c-f064-4dbf-97f1-8aa066ac823d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeepayment_Salary}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="285" y="54" width="115" height="26" forecolor="#000000" backcolor="#CCCCCC" uuid="af52232e-fa64-476d-8d4f-171f97d2e57a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Balance]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="400" y="54" width="132" height="26" uuid="56fbcd22-14cc-40e1-be5f-fd136612924c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeepayment_balance}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="286" y="30" width="114" height="26" forecolor="#000000" backcolor="#CCCCCC" uuid="3bac5834-6db7-40e5-a3a9-d02144a17c3a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Total Salary]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="400" y="32" width="132" height="24" uuid="385d0d84-e71b-4f37-b127-6dee74ae3b3d"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeepayment_TotalSalary}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="0" y="56" width="120" height="24" forecolor="#000000" backcolor="#CCCCCC" uuid="095516c4-c8aa-47c1-82d6-ccecb7266d91"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Paid Salary]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="120" y="56" width="102" height="24" uuid="47cc3f96-53fb-4cfe-b565-4eafb6143faf"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeepayment_PaidSalry}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="1" y="80" width="118" height="26" forecolor="#000000" backcolor="#CCCCCC" uuid="22e45172-3ea7-446b-b4fb-91c287921f03"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Status]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="119" y="80" width="102" height="26" uuid="88881061-4890-44a7-b480-cedbbdd29231"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeepayment_Status}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="1" y="0" width="118" height="30" forecolor="#000000" backcolor="#CCCCCC" uuid="c3a64a6a-5025-4c8b-9a7f-f093f156e5fd"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Month]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="119" y="0" width="102" height="30" uuid="fa3ef278-be94-4e46-a86c-0e11d1b9f7cf"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeepayment_month}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" mode="Opaque" x="285" y="0" width="115" height="30" forecolor="#000000" backcolor="#CCCCCC" uuid="1ccc40d4-8c36-4909-a683-5121ae3f6d9b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<text><![CDATA[Year]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="400" y="0" width="132" height="30" uuid="ecbc8760-e5ae-42f7-ba27-6917f14ad66b"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="Double"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeepayment_year}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement mode="Opaque" x="173" y="0" width="100" height="20" backcolor="#CCCCCC" uuid="19a0abd4-5712-433f-b0b7-34b210c7fc18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Deducation]]></text>
+			</staticText>
+			<line>
+				<reportElement x="9" y="118" width="549" height="1" uuid="1d95d5ea-1b15-41e0-bfbb-6511ce4f109e"/>
+			</line>
+			<line>
+				<reportElement x="3" y="254" width="549" height="1" uuid="78e3b03f-763b-4871-a794-73e54e922621"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="728a491f-9213-4e43-b8ef-16897b879b5e"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#736343" uuid="539780a2-2b4c-45fe-84e2-c9f65ebe50f3"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="453" y="0" width="80" height="20" forecolor="#736343" uuid="7cf35b14-7026-4d64-966f-ca3edf949653"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="e02ed56d-abad-4896-a59f-70dfcafda233"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+</jasperReport>

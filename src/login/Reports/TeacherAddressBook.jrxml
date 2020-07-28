@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TeacherAddressBook" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7eabe006-012d-4aa7-9cc5-daa0a747dbd8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="131"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[SELECT
+     employeeinfo.`employeeid` AS employeeinfo_employeeid,
+     employeeinfo.`FirstName` AS employeeinfo_FirstName,
+     employeeinfo.`LastName` AS employeeinfo_LastName,
+     employeeinfo.`CNIC` AS employeeinfo_CNIC,
+     employeeinfo.`FatherOccupation` AS employeeinfo_FatherOccupation,
+     employeeinfo.`Email` AS employeeinfo_Email,
+     employeeinfo.`CellNo` AS employeeinfo_CellNo,
+     employeeinfo.`Telephone` AS employeeinfo_Telephone,
+     employeeinfo.`DateofBirth` AS employeeinfo_DateofBirth,
+     employeeinfo.`BloodGroup` AS employeeinfo_BloodGroup,
+     employeeinfo.`gender` AS employeeinfo_gender,
+     employeeinfo.`Address` AS employeeinfo_Address,
+     employeeinfo.`City` AS employeeinfo_City,
+     employeeinfo.`Province` AS employeeinfo_Province,
+     employeeinfo.`MarriedStatus` AS employeeinfo_MarriedStatus,
+     employeeinfo.`Post` AS employeeinfo_Post,
+     employeeinfo.`EmployeeStatus` AS employeeinfo_EmployeeStatus,
+     employeeinfo.`JoiningDate` AS employeeinfo_JoiningDate,
+     employeeinfo.`LeavingDate` AS employeeinfo_LeavingDate,
+     employeeinfo.`Remarks` AS employeeinfo_Remarks,
+     employeeinfo.`Image` AS employeeinfo_Image,
+     employeeinfo.`AreaOfIntrest` AS employeeinfo_AreaOfIntrest,
+     employeeinfo.`LevelOfTeaching` AS employeeinfo_LevelOfTeaching,
+     employeeinfo.`DataStatus` AS employeeinfo_DataStatus
+FROM
+     `employeeinfo` employeeinfo
+where employeeinfo.`DataStatus`='Staff'
+order by employeeinfo.`FirstName`]]>
+	</queryString>
+	<field name="employeeinfo_employeeid" class="java.lang.String"/>
+	<field name="employeeinfo_FirstName" class="java.lang.String"/>
+	<field name="employeeinfo_LastName" class="java.lang.String"/>
+	<field name="employeeinfo_CNIC" class="java.lang.String"/>
+	<field name="employeeinfo_FatherOccupation" class="java.lang.String"/>
+	<field name="employeeinfo_Email" class="java.lang.String"/>
+	<field name="employeeinfo_CellNo" class="java.lang.String"/>
+	<field name="employeeinfo_Telephone" class="java.lang.String"/>
+	<field name="employeeinfo_DateofBirth" class="java.sql.Date"/>
+	<field name="employeeinfo_BloodGroup" class="java.lang.String"/>
+	<field name="employeeinfo_gender" class="java.lang.String"/>
+	<field name="employeeinfo_Address" class="java.lang.String"/>
+	<field name="employeeinfo_City" class="java.lang.String"/>
+	<field name="employeeinfo_Province" class="java.lang.String"/>
+	<field name="employeeinfo_MarriedStatus" class="java.lang.String"/>
+	<field name="employeeinfo_Post" class="java.lang.String"/>
+	<field name="employeeinfo_EmployeeStatus" class="java.lang.String"/>
+	<field name="employeeinfo_JoiningDate" class="java.sql.Date"/>
+	<field name="employeeinfo_LeavingDate" class="java.sql.Date"/>
+	<field name="employeeinfo_Remarks" class="java.lang.String"/>
+	<field name="employeeinfo_Image" class="java.lang.Object"/>
+	<field name="employeeinfo_AreaOfIntrest" class="java.lang.String"/>
+	<field name="employeeinfo_LevelOfTeaching" class="java.lang.String"/>
+	<field name="employeeinfo_DataStatus" class="java.lang.String"/>
+	<group name="name">
+		<groupExpression><![CDATA[$F{employeeinfo_FirstName}]]></groupExpression>
+		<groupHeader>
+			<band height="36">
+				<textField>
+					<reportElement x="1" y="13" width="0" height="20" uuid="15318d67-95cb-497e-95cd-61a0fa460101"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeinfo_FirstName}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="16"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="129" y="0" width="480" height="62" uuid="0a56d4fb-4895-4f29-b75b-ff621f05a4f1"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Assas High School]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="260" y="62" width="196" height="22" forecolor="#000000" uuid="a0a35527-d3cd-4b35-94f3-79592713b37a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[All Teachers Address ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="84" width="480" height="42" uuid="95adf4ad-5efb-40fe-831a-34195047d6eb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Shair kot Road Dholan Hithar                                 Tel:(+92) 3004741672]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="c08bb472-1125-4836-880e-11b65d27bbbb"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="114" height="15" forecolor="#000000" uuid="84c1c2fe-2a87-4f3b-a297-1a6cabbaede0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Staff ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="114" y="0" width="114" height="15" forecolor="#000000" uuid="09f50712-3bbb-4f1a-91ad-488c5f5e92f2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="228" y="0" width="114" height="15" forecolor="#000000" uuid="6a5e5cb1-6077-4079-a561-24d9807e10b6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[L.Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="342" y="0" width="78" height="15" forecolor="#000000" uuid="fd262fb7-5fc1-43e8-be7b-c6abcfffab6d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="420" y="0" width="189" height="15" forecolor="#000000" uuid="69e17ec8-4067-4dc2-b1b5-cabc63ae064b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="609" y="0" width="108" height="15" forecolor="#000000" uuid="e490cfed-841d-4bed-b1f0-bd36515a544e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[City]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="706" y="0" width="92" height="15" forecolor="#000000" uuid="57836958-1aac-4d2b-8f4f-2398149a4dc6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Province]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="7fbc3c4c-8693-4cb1-92ce-984d61c6d5de"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="114" height="15" uuid="b1db8835-f817-4d96-8f1f-0147bb60e211"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="1_1_2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeinfo_employeeid}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="114" y="0" width="114" height="15" uuid="41e59339-f808-4b95-ab25-6cf025646152"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="1_1_2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeinfo_FirstName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="228" y="0" width="114" height="15" uuid="c3eedd4a-3e95-44ed-b1e4-114be159fe52"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="1_1_2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeinfo_LastName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="342" y="0" width="78" height="15" uuid="d88a71bf-b35d-4180-8702-8c566560cfd6"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="1_1_2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeinfo_gender}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="420" y="0" width="189" height="15" uuid="308a27a2-9ff0-4aae-ba56-f3876b1439b6"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="1_1_2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeinfo_Address}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="609" y="0" width="97" height="15" uuid="18b5f0ea-4b41-4485-a851-ed1152f3b753"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="1_1_2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeinfo_City}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="706" y="0" width="92" height="15" uuid="ebd410ce-1332-4fab-a95a-f77cee3d53a8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman"/>
+						<paragraph lineSpacing="1_1_2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{employeeinfo_Province}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="30" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="d7210f17-6340-4130-b744-d8d72aadd69e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="1" y="10" width="100" height="20" uuid="39592b3a-a4ae-4ecd-9851-e0a249c2e075"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Teacher]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="101" y="10" width="100" height="20" uuid="00df9669-f52f-43d9-901e-b0a349da064c"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="77355e16-c3d7-48b4-9678-aa5f34839ccc"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="329fbdc0-d6c9-4309-8331-de34ad19158b"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="394c20aa-8989-439b-8c26-4c1d68d09b58"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="eca8723a-4fce-4bea-9503-776b6c68d646"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

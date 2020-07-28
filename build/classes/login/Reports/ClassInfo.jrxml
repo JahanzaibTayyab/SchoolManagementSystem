@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ClassInfo" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="669313ef-3630-416e-9904-3a196b77a0b6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="162"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[SELECT
+     classinfo.`ClassName` AS classinfo_ClassName,
+     classinfo.`Section` AS classinfo_Section,
+     classinfo.`Subject1Name` AS classinfo_Subject1Name,
+     classinfo.`Subject2Name` AS classinfo_Subject2Name,
+     classinfo.`Subject3Name` AS classinfo_Subject3Name,
+     classinfo.`Subject4Name` AS classinfo_Subject4Name,
+     classinfo.`Subject5Name` AS classinfo_Subject5Name,
+     classinfo.`Subject6Name` AS classinfo_Subject6Name,
+     classinfo.`Subject7Name` AS classinfo_Subject7Name,
+     classinfo.`Subject8Name` AS classinfo_Subject8Name,
+     classinfo.`Subject9Name` AS classinfo_Subject9Name,
+     classinfo.`Subject10Name` AS classinfo_Subject10Name,
+     classinfo.`Subject11Name` AS classinfo_Subject11Name,
+     classinfo.`Subject12Name` AS classinfo_Subject12Name
+FROM
+     `classinfo` classinfo
+order by classinfo.`ClassName`]]>
+	</queryString>
+	<field name="classinfo_ClassName" class="java.lang.String"/>
+	<field name="classinfo_Section" class="java.lang.String"/>
+	<field name="classinfo_Subject1Name" class="java.lang.String"/>
+	<field name="classinfo_Subject2Name" class="java.lang.String"/>
+	<field name="classinfo_Subject3Name" class="java.lang.String"/>
+	<field name="classinfo_Subject4Name" class="java.lang.String"/>
+	<field name="classinfo_Subject5Name" class="java.lang.String"/>
+	<field name="classinfo_Subject6Name" class="java.lang.String"/>
+	<field name="classinfo_Subject7Name" class="java.lang.String"/>
+	<field name="classinfo_Subject8Name" class="java.lang.String"/>
+	<field name="classinfo_Subject9Name" class="java.lang.String"/>
+	<field name="classinfo_Subject10Name" class="java.lang.String"/>
+	<field name="classinfo_Subject11Name" class="java.lang.String"/>
+	<field name="classinfo_Subject12Name" class="java.lang.String"/>
+	<group name="Class">
+		<groupExpression><![CDATA[$F{classinfo_ClassName}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement mode="Opaque" x="1" y="15" width="116" height="20" backcolor="#CCCCCC" uuid="90d33624-7454-43c1-982d-0e9a9726c69e"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{classinfo_ClassName}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement mode="Opaque" x="195" y="15" width="100" height="20" backcolor="#CCCCCC" uuid="f7acc863-8395-4615-8d86-56ecacf4e964"/>
+					<textElement>
+						<font fontName="Times New Roman" size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{classinfo_Section}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="5"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="78" y="0" width="413" height="62" uuid="6e16ec78-09bd-4132-ad7a-82b592b5701b"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Assas High School]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="195" y="62" width="196" height="22" forecolor="#000000" uuid="bd19c2d9-cee3-403d-bf9d-43f6baef42f0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Class Info]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="78" y="84" width="413" height="42" uuid="c754bb65-a44a-4169-803d-abe20df3e167"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Shair kot Road Dholan Hithar                                 Tel:(+92) 3004741672]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="51f795ce-1160-47b2-bc00-ad473392f67e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="234" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="0" uuid="c9ad445b-c72b-42d3-8b3b-4d577e43d6b6"/>
+			</frame>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="1" y="31" width="77" height="27" forecolor="#000000" backcolor="#CCCCCC" uuid="a4c8cc5d-87ff-4f8f-8794-ebf17889dbea"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Class Name]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="93" y="31" width="141" height="27" uuid="e8e52aaa-86d0-4c7b-b30b-0f3a031b7302"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classinfo_ClassName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="295" y="31" width="96" height="27" forecolor="#000000" backcolor="#CCCCCC" uuid="aa4c20d2-eb75-40e0-a410-52fc74d0581d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Section]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="413" y="31" width="121" height="27" uuid="5a3e1a25-909d-4c9d-b5bb-cdb9a8102572"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classinfo_Section}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="1" y="58" width="77" height="25" forecolor="#000000" backcolor="#CCCCCC" uuid="05a1bca4-96c9-4c90-9cd7-357e7ac75e45"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Subject 1]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="93" y="58" width="141" height="25" uuid="ce176b11-f31b-43b5-88f3-a7091b806679"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classinfo_Subject1Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="295" y="58" width="96" height="25" forecolor="#000000" backcolor="#CCCCCC" uuid="2f797ff6-52df-4ba8-92f6-d5cff6ca929b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Subject 2]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="413" y="58" width="121" height="25" uuid="cf4060ca-ec03-437b-af4a-b1885c8a9aa0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classinfo_Subject2Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="1" y="83" width="77" height="26" forecolor="#000000" backcolor="#CCCCCC" uuid="7e1a13de-798d-4038-a5ae-7bfddef34b94"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Subject 3]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="93" y="83" width="141" height="26" uuid="d9f30870-67f4-4027-963b-1da8e5595d5f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classinfo_Subject3Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="295" y="83" width="96" height="26" forecolor="#000000" backcolor="#CCCCCC" uuid="fdca9574-5f99-472a-8b14-466fae603efc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Subject 4]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="413" y="83" width="121" height="26" uuid="ef682510-77d3-4b0a-a8aa-ff868d781dd9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classinfo_Subject4Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="0" y="109" width="77" height="29" forecolor="#000000" backcolor="#CCCCCC" uuid="57945fcf-8002-4f8b-9a8f-c4ee03006f3d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Subject 5]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="92" y="109" width="141" height="29" uuid="eb2f1f43-1830-48c6-a110-b999f8680311"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classinfo_Subject5Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="294" y="109" width="95" height="29" forecolor="#000000" backcolor="#CCCCCC" uuid="678e25bc-3b41-46c6-8b66-1cfb5df46ba8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Subject 6]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="412" y="109" width="121" height="29" uuid="89d69aec-7fa4-45cf-8251-6c36bee7a69c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classinfo_Subject6Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="0" y="138" width="77" height="29" forecolor="#000000" backcolor="#CCCCCC" uuid="bcc511d0-b7e6-4075-9c78-10fce5266cb1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Subject 7]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="92" y="138" width="141" height="29" uuid="014cf2aa-3f3f-497f-a0c0-fd73264a5225"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classinfo_Subject7Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="294" y="138" width="96" height="29" forecolor="#000000" backcolor="#CCCCCC" uuid="85a36616-215e-4b52-bc9f-cccd53003e43"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Subject 8]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="412" y="138" width="121" height="29" uuid="d8f11daf-db81-41b7-be6a-5438726485b4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classinfo_Subject8Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="1" y="167" width="77" height="28" forecolor="#000000" backcolor="#CCCCCC" uuid="f6ce1b96-8907-46af-9fae-82e5bbfa9192"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Subject 9]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="93" y="167" width="141" height="28" uuid="6e5b3868-6df1-4dc5-9439-c1e3697c67b4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classinfo_Subject9Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="295" y="167" width="95" height="28" forecolor="#000000" backcolor="#CCCCCC" uuid="2415cf74-be41-4341-bff8-b35f963ef38a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Subject 10]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="413" y="167" width="121" height="28" uuid="cbb50464-7434-41b5-a3c6-1a64b4192d9a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classinfo_Subject10Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="0" y="195" width="77" height="27" forecolor="#000000" backcolor="#CCCCCC" uuid="d817614c-19dd-4c50-a04d-04284b54e617"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Subject 11]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="92" y="195" width="141" height="27" uuid="f7df51f1-f873-4edd-bc90-9dbe637b7453"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classinfo_Subject11Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="294" y="195" width="95" height="27" forecolor="#000000" backcolor="#CCCCCC" uuid="1a71fbc6-8f20-4c87-a15c-e920a775c0f7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[Subject 12]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="412" y="195" width="121" height="27" uuid="ae096f0a-8f59-4b2b-a3bd-3baf14f390ca"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{classinfo_Subject12Name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="9" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="84a5251c-fa7c-453f-8779-d28d26069f1e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="e3ad414c-444b-417c-8009-f7465665babb"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#736343" uuid="9fada4ad-2ba8-4fb0-b4b9-032528867b1b"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="453" y="0" width="80" height="20" forecolor="#736343" uuid="67527963-a4f4-4492-8775-63932333550a"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="2ee03840-930e-4c06-ae5f-75248fd8825d"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

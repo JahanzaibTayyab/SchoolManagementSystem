@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="FeeVoucherDetails" prefHeight="442.0" prefWidth="864.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.Controller.ViewemployeeAllownaceController">
+   <children>
+      <Pane prefHeight="115.0" prefWidth="657.0" style="-fx-background-color: #2d75e8;" AnchorPane.bottomAnchor="327.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="206.0" layoutY="30.0" prefHeight="38.0" prefWidth="513.0" text="Employee Allownace Information" textAlignment="CENTER" textFill="#ffeeee">
+               <font>
+                  <Font name="Elephant" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="224.0" layoutY="68.0" text="Assas High School" />
+            <TextField fx:id="id" layoutX="695.0" layoutY="82.0" onAction="#ActionOnID" promptText="search" />
+         </children>
+      </Pane>
+      <TableView fx:id="employeeinformation" layoutX="5.0" layoutY="121.0" prefHeight="308.0" prefWidth="864.0">
+         <columns>
+            <TableColumn fx:id="col_sr" prefWidth="38.0" text="Sr" />
+            <TableColumn fx:id="col_id" prefWidth="76.0" text="Employee ID" />
+            <TableColumn fx:id="col_name" prefWidth="105.0" text="Name" />
+            <TableColumn fx:id="col_post" prefWidth="91.0" text="Post" />
+            <TableColumn fx:id="col_month" prefWidth="53.0" text="Month" />
+            <TableColumn fx:id="col_year" prefWidth="40.0" text="Year" />
+            <TableColumn fx:id="col_overtime" prefWidth="72.0" text="Over Time" />
+            <TableColumn fx:id="col_medical" prefWidth="56.0" text="Medical" />
+            <TableColumn fx:id="col_bounce" prefWidth="50.0" text="Bounce" />
+            <TableColumn fx:id="col_HAllownace" prefWidth="81.0" text="H.Allowance" />
+            <TableColumn fx:id="col_TAllownace" prefWidth="82.0" text="T.Allownace" />
+            <TableColumn fx:id="col_Others" prefWidth="54.0" text="Others" />
+            <TableColumn fx:id="col_total" prefWidth="65.0" text="Total" />
+         </columns></TableView>
+   </children>
+</AnchorPane>

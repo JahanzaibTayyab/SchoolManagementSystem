@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="134.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="login.Controller.BackupandrestoreController">
+   <children>
+      <TabPane prefHeight="154.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Backup">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="119.0" prefWidth="413.0">
+                     <children>
+                        <TextField fx:id="backuppath" layoutX="18.0" layoutY="27.0" prefHeight="35.0" prefWidth="560.0" promptText="path" />
+                        <Button fx:id="backupbrowser" layoutX="171.0" layoutY="76.0" mnemonicParsing="false" onMouseClicked="#BackupBrowserButtonHandling" prefHeight="25.0" prefWidth="102.0" text="Browser" />
+                        <Button fx:id="backup" layoutX="323.0" layoutY="76.0" mnemonicParsing="false" onMouseClicked="#backupButtonHandling" prefHeight="25.0" prefWidth="102.0" text="Backup" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Restore">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="restorepath" layoutX="28.0" layoutY="28.0" prefHeight="33.0" prefWidth="534.0" promptText="path" />
+                        <Button fx:id="restoreBrowser" layoutX="171.0" layoutY="77.0" mnemonicParsing="false" onMouseClicked="#RestoreBrowserButtonHandling" prefHeight="25.0" prefWidth="101.0" text="Browser" />
+                        <Button fx:id="restore" layoutX="329.0" layoutY="77.0" mnemonicParsing="false" onMouseClicked="#restoreButtonHandling" prefHeight="25.0" prefWidth="101.0" text="Restore" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

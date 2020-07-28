@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="FeeVoucherDetails" prefHeight="405.0" prefWidth="657.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.Controller.UpdateClassChargesController">
+   <children>
+      <Pane prefHeight="113.0" prefWidth="657.0" style="-fx-background-color: #2d75e8;" AnchorPane.bottomAnchor="292.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="1.0" layoutY="40.0" prefHeight="38.0" prefWidth="467.0" text="Class Fee Charges" textAlignment="CENTER" textFill="#ffeeee">
+               <font>
+                  <Font name="Elephant" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="99.0" layoutY="85.0" text="Assas High School" />
+         </children>
+      </Pane>
+      <Label layoutX="70.0" layoutY="184.0" text="Class Fee" />
+      <Label layoutX="70.0" layoutY="218.0" text="Generator Fee" />
+      <JFXTextField fx:id="classfee" layoutX="160.0" layoutY="172.0" promptText="Class Fee" />
+      <JFXTextField fx:id="generatorfeeS" layoutX="160.0" layoutY="214.0" promptText="Generator fee" />
+      <JFXButton fx:id="Clear" alignment="CENTER" buttonType="RAISED" layoutX="332.0" layoutY="348.0" prefHeight="25.0" prefWidth="89.0" ripplerFill="#4745bf" style="-fx-background-color: #4745bf;" text="Reset" />
+      <JFXButton fx:id="Update" alignment="CENTER" buttonType="RAISED" layoutX="232.0" layoutY="348.0" prefHeight="25.0" prefWidth="89.0" ripplerFill="#4745bf" style="-fx-background-color: #4745bf;" text="Update" />
+      <Label layoutX="70.0" layoutY="147.0" text="Class" />
+      <JFXComboBox fx:id="slectclass" layoutX="160.0" layoutY="135.0" prefHeight="25.0" prefWidth="135.0" promptText="Select class" />
+      <Label layoutX="70.0" layoutY="256.0" text="Function Dues" />
+      <JFXTextField fx:id="functionfee" layoutX="160.0" layoutY="252.0" promptText="Function dues" />
+      <Label layoutX="348.0" layoutY="139.0" text="Party Charges" />
+      <JFXTextField fx:id="partyfee" layoutX="449.0" layoutY="135.0" prefHeight="25.0" prefWidth="124.0" promptText="party charges" />
+      <Label layoutX="348.0" layoutY="256.0" text="Others Charges" />
+      <JFXTextField fx:id="othercharges" layoutX="449.0" layoutY="252.0" prefHeight="25.0" prefWidth="124.0" promptText="other charges" />
+      <Label layoutX="348.0" layoutY="176.0" text="Sports Fee" />
+      <JFXTextField fx:id="sportfee" layoutX="449.0" layoutY="172.0" prefHeight="25.0" prefWidth="124.0" promptText="sports fee" />
+      <Label layoutX="348.0" layoutY="218.0" text="Trip fee" />
+      <JFXTextField fx:id="tripfee" layoutX="449.0" layoutY="214.0" prefHeight="25.0" prefWidth="124.0" promptText="trip fee" />
+      <Label layoutX="70.0" layoutY="298.0" text="Exams Fee" />
+      <JFXTextField fx:id="examsfee" layoutX="160.0" layoutY="294.0" promptText="exams fee" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="672.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.Controller.PayRollController">
+   <children>
+      <Pane prefHeight="106.0" prefWidth="672.0" style="-fx-background-color: #2d75e8;">
+         <children>
+            <Label alignment="TOP_CENTER" layoutY="28.0" prefHeight="32.0" prefWidth="655.0" text="Payroll System" textFill="#f8f5f5">
+               <font>
+                  <Font name="Georgia" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="285.0" layoutY="60.0" text="Assas High School" />
+         </children>
+      </Pane>
+      <Pane layoutX="68.0" layoutY="107.0" prefHeight="362.0" prefWidth="588.0" style="-fx-background-image: #;">
+         <children>
+            <ImageView fitHeight="366.0" fitWidth="678.0" layoutX="-68.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Business-Growth.jpg" />
+               </image>
+            </ImageView>
+            <Pane layoutX="294.0" layoutY="149.0">
+               <children>
+                  <Button fx:id="addemployeesalary" mnemonicParsing="false" onMouseClicked="#AddemployeesalaryButtonhandling" prefHeight="32.0" prefWidth="149.0" stylesheets="@Style.css" text="Add Employee Salary" />
+                  <Button fx:id="search" layoutX="162.0" mnemonicParsing="false" onMouseClicked="#SearchButtonhandling" prefHeight="32.0" prefWidth="115.0" stylesheets="@Style.css" text="Search" />
+                  <Button fx:id="allowance" layoutY="46.0" mnemonicParsing="false" onMouseClicked="#AllowanceaButtonhandling" prefHeight="32.0" prefWidth="142.0" stylesheets="@Style.css" text="Allowance" />
+                  <Button fx:id="updatesalary" layoutX="161.0" layoutY="46.0" mnemonicParsing="false" onMouseClicked="#UpdateSalaryButtonhandling" prefHeight="32.0" prefWidth="115.0" stylesheets="@Style.css" text="Update Salary" />
+                  <Button fx:id="deduction" layoutY="97.0" mnemonicParsing="false" onMouseClicked="#DeductionButtonhandling" prefHeight="32.0" prefWidth="142.0" stylesheets="@Style.css" text="Deduction" />
+                  <Button fx:id="payment" layoutX="162.0" layoutY="97.0" mnemonicParsing="false" onMouseClicked="#PaymentButtonhandling" prefHeight="32.0" prefWidth="115.0" stylesheets="@Style.css" text="Payment" />
+                  <Button fx:id="reports" layoutX="64.0" layoutY="141.0" mnemonicParsing="false" onMouseClicked="#ReportsButtonhandling" prefHeight="32.0" prefWidth="199.0" stylesheets="@Style.css" text="Reports" />
+                  <FontAwesomeIconView glyphName="PLUS_CIRCLE" layoutX="6.0" layoutY="20.0" />
+                  <FontAwesomeIconView glyphName="SEARCH" layoutX="180.0" layoutY="20.0" />
+                  <MaterialDesignIconView glyphName="PACKAGE_VARIANT" layoutX="11.0" layoutY="67.0" />
+                  <FontAwesomeIconView glyphName="REFRESH" layoutX="169.0" layoutY="66.0" />
+                  <FontAwesomeIconView glyphName="MINUS_CIRCLE" layoutX="19.0" layoutY="118.0" text="" />
+                  <FontAwesomeIconView glyphName="CREDIT_CARD" layoutX="168.0" layoutY="116.0" />
+                  <FontAwesomeIconView glyphName="FILE_PDF_ALT" layoutX="101.0" layoutY="160.0" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="630.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.Controller.EmployeeController">
+   <children>
+      <Pane prefHeight="135.0" prefWidth="1300.0" style="-fx-background-color: #001a80;">
+         <children>
+            <JFXRadioButton fx:id="allemployee" layoutX="307.0" layoutY="59.0" onMouseClicked="#AllEmplyeeradiobuttonHandling" selected="true" text="All Employees" textFill="#fffafa">
+               <toggleGroup>
+                  <ToggleGroup fx:id="check" />
+               </toggleGroup></JFXRadioButton>
+            <FontAwesomeIconView glyphName="USERS" layoutX="299.0" layoutY="71.0" wrappingWidth="15.857142448425293" />
+            <JFXRadioButton fx:id="male" layoutX="451.0" layoutY="59.0" onMouseClicked="#MaleEmplyeeradiobuttonHandling" text="Male" textFill="#fffafa" toggleGroup="$check" />
+            <FontAwesomeIconView glyphName="MALE" layoutX="443.0" layoutY="71.0" wrappingWidth="15.857142448425293" />
+            <JFXRadioButton fx:id="female" layoutX="554.0" layoutY="59.0" onMouseClicked="#FemaleEmplyeeradiobuttonHandling" text="Female" textFill="#fffafa" toggleGroup="$check" />
+            <FontAwesomeIconView glyphName="FEMALE" layoutX="546.0" layoutY="71.0" wrappingWidth="15.857142448425293" />
+            <Label alignment="TOP_CENTER" layoutX="32.0" layoutY="40.0" prefHeight="84.0" prefWidth="240.0" text="Employees" textFill="#fff9f9">
+               <font>
+                  <Font name="Times New Roman" size="30.0" />
+               </font>
+            </Label>
+            <TextField fx:id="search" layoutX="918.0" layoutY="54.0" onAction="#SearchemployeebyidHandling" prefHeight="25.0" prefWidth="305.0" promptText="Serach by Employee id" />
+            <FontAwesomeIconView glyphName="SEARCH" layoutX="1203.0" layoutY="71.0" />
+            <JFXRadioButton fx:id="Active" layoutX="683.0" layoutY="58.0" onMouseClicked="#ActiveEmplyeeradiobuttonHandling" text="Active" textFill="#fffafa">
+               <toggleGroup>
+                  <ToggleGroup fx:id="check2" />
+               </toggleGroup></JFXRadioButton>
+            <JFXRadioButton fx:id="Unactive" layoutX="783.0" layoutY="58.0" onMouseClicked="#ClearEmplyeeradiobuttonHandling" text="Unactive" textFill="#fffafa" toggleGroup="$check2" />
+            <FontAwesomeIconView glyphName="EYE" layoutX="675.0" layoutY="71.0" wrappingWidth="15.857142448425293" />
+            <FontAwesomeIconView glyphName="EYE_SLASH" layoutX="775.0" layoutY="70.0" wrappingWidth="15.857142448425293" />
+         </children>
+      </Pane>
+      <TableView fx:id="employeeinformation" layoutY="134.0" prefHeight="495.0" prefWidth="984.0">
+         <columns>
+            <TableColumn fx:id="col_sr" prefWidth="32.0" text="Sr" />
+            <TableColumn fx:id="col_employeeid" prefWidth="61.0" text="E.ID" />
+            <TableColumn fx:id="col_name" prefWidth="99.99996948242188" text="Name" />
+            <TableColumn fx:id="col_lname" prefWidth="85.0" text="L.Name" />
+            <TableColumn fx:id="col_cnic" prefWidth="122.0" text="CNIC" />
+            <TableColumn fx:id="col_cellno" prefWidth="102.0" text="Cell No" />
+            <TableColumn fx:id="col_pstatus" prefWidth="54.0" text="P.Status" />
+            <TableColumn fx:id="col_address" prefWidth="108.0" text="Address" />
+            <TableColumn fx:id="col_post" prefWidth="62.0" text="Post" />
+            <TableColumn fx:id="col_gender" prefWidth="54.0" text="Gender" />
+            <TableColumn fx:id="col_status" prefWidth="61.0" text="E.Status" />
+            <TableColumn fx:id="col_doj" prefWidth="61.0" text="DOJ" />
+            <TableColumn fx:id="col_dol" prefWidth="82.0" text="DOL" />
+         </columns></TableView>
+      <PieChart fx:id="employeepiechart" layoutX="984.0" layoutY="134.0" prefHeight="424.0" prefWidth="315.0" title="Employee" />
+      <Button id="edit" fx:id="update" layoutX="1050.0" layoutY="558.0" mnemonicParsing="false" onMouseClicked="#UpdateEmplyeeButtonHandling" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #804d80;" text="Update" />
+      <Button id="edit" fx:id="delete" layoutX="1147.0" layoutY="558.0" mnemonicParsing="false" onMouseClicked="#DeleteEmplyeeButtonHandling" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: #664db3;" text="Delete" />
+      <Button id="edit" fx:id="update1" layoutX="1050.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#RefreahButtonHandling" prefHeight="25.0" prefWidth="188.0" style="-fx-background-color: #804d80;" text="Refresh Table" />
+   </children>
+</AnchorPane>
